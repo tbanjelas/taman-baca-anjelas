@@ -1,11 +1,91 @@
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 2em;
-    text-align: center;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #003300, #006600);
+  color: white;
 }
 
-h1 {
-    color: #008080;
+header {
+  background-color: #00aa00;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+header p {
+  font-size: 18px;
+  margin: 5px 0 0;
+}
+
+.navbar {
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: #00cc44;
+  color: black;
+}
+
+.contact-info {
+  background-color: #007a33;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #00ff99;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #004d00;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #002200;
+  text-align: center;
+  padding: 15px;
+  color: #aaa;
+  margin-top: 20px;
+  font-size: 14px;
 }
