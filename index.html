@@ -20,12 +20,19 @@
     <a href="#">Kontak</a>
   </nav>
 
+  <!-- Pencarian -->
+  <div class="search-box">
+    <input type="text" placeholder="Cari kegiatan atau karya..." />
+  </div>
+
   <main>
+    <!-- Tentang Kami -->
     <section class="section">
       <h2>Tentang Kami</h2>
       <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
     </section>
 
+    <!-- Kegiatan -->
     <section class="section">
       <h2>Kegiatan Terbaru</h2>
       <div class="grid-container">
@@ -43,29 +50,44 @@
         </div>
       </div>
     </section>
-  </main>
-<section>
-  <h2>Galeri Karya Anak</h2>
-  <div class="gallery-wrapper">
-    <div class="thumbnail-carousel">
-      <img src="foto1.jpg" alt="Karya 1" onclick="openModal(this)">
-      <img src="foto2.jpg" alt="Karya 2" onclick="openModal(this)">
-      <img src="foto3.jpg" alt="Karya 3" onclick="openModal(this)">
-    </div>
-    <div class="featured-image">
-      <img id="mainImage" src="foto1.jpg" alt="Gambar Besar" />
-    </div>
-  </div>
-</section>
 
-<!-- Modal popup -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImage">
-</div>
+    <!-- Galeri Karya Anak -->
+    <section class="section">
+      <h2>Galeri Karya Anak</h2>
+      <div class="gallery-wrapper">
+        <div class="thumbnail-carousel">
+          <img src="foto1.jpg" alt="Karya 1" onclick="openModal(this)">
+          <img src="foto2.jpg" alt="Karya 2" onclick="openModal(this)">
+          <img src="foto3.jpg" alt="Karya 3" onclick="openModal(this)">
+        </div>
+        <div class="featured-image">
+          <img id="mainImage" src="foto1.jpg" alt="Gambar Besar" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal popup -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
   <footer>
     <p>&copy; 2025 Taman Baca Anjelas</p>
+    <p>Kontak: <a href="mailto:tbanjelas@gmail.com">tbanjelas@gmail.com</a> |
+    TikTok: <a href="https://tiktok.com/@tbanjelas" target="_blank">@tbanjelas</a></p>
   </footer>
+
+  <script>
+    function openModal(img) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modalImage").src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
