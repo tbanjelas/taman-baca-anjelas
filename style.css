@@ -9,7 +9,6 @@ header {
   background-color: #00aa00;
   padding: 20px;
   text-align: center;
-  color: white;
 }
 
 header h1 {
@@ -24,9 +23,9 @@ header p {
 
 .navbar {
   background-color: #000;
-  overflow: hidden;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 10px 0;
 }
 
@@ -40,13 +39,6 @@ header p {
 .navbar a:hover {
   background-color: #00cc44;
   color: black;
-}
-
-.contact-info {
-  background-color: #007a33;
-  padding: 10px;
-  text-align: center;
-  font-size: 16px;
 }
 
 .section {
@@ -89,32 +81,69 @@ footer {
   margin-top: 20px;
   font-size: 14px;
 }
-.gallery {
+
+/* === Galeri Gambar === */
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.thumbnail-carousel {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
-.gallery img {
+.thumbnail-carousel img {
   width: 100px;
-  height: 100px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 8px;
+  border: 2px solid #00ff88;
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 5px #00ff88;
+  transition: transform 0.3s;
 }
 
-.gallery img:hover {
-  transform: scale(1.1);
+.thumbnail-carousel img:hover {
+  transform: scale(1.05);
 }
 
-.large-image {
-  display: block;
-  margin: 30px auto;
+.featured-image img {
   max-width: 90%;
+  border: 3px solid #00ff88;
   border-radius: 10px;
-  box-shadow: 0 0 10px #00ff88;
+}
+
+/* === Modal === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
