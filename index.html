@@ -5,59 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taman Baca Anjelas</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <h1 data-id="title">Selamat Datang di Taman Baca Anjelas</h1>
-    <p data-id="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
-
+    <h1>Selamat Datang di Taman Baca Anjelas</h1>
+    <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
     <div class="language-switch">
-      <button onclick="switchLanguage('id')">Bahasa</button>
-      <button onclick="switchLanguage('en')">English</button>
+      <a href="#">ID</a> | <a href="#">EN</a>
     </div>
   </header>
 
   <nav class="navbar">
-    <a href="#" data-id="nav-home">Beranda</a>
-    <a href="#" data-id="nav-about">Tentang Kami</a>
-    <a href="#" data-id="nav-activities">Kegiatan</a>
-    <a href="#" data-id="nav-gallery">Karya Anak</a>
-    <a href="#" data-id="nav-contact">Kontak</a>
+    <a href="#">Beranda</a>
+    <a href="#">Tentang Kami</a>
+    <a href="#">Kegiatan</a>
+    <a href="#">Galeri</a>
+    <a href="#">Kontak</a>
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
   </nav>
 
   <main>
     <section class="section">
-      <h2 data-id="about-title">Tentang Kami</h2>
-      <p data-id="about-text">
-        Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.
-      </p>
+      <h2>Tentang Kami</h2>
+      <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
     </section>
 
     <section class="section">
-      <h2 data-id="activity-title">Kegiatan Terbaru</h2>
+      <h2>Kegiatan Taman Baca Anjelas</h2>
       <div class="grid-container">
         <div class="grid-item">
-          <img src="https://via.placeholder.com/300x200?text=Foto+1" alt="Kegiatan 1" />
-          <p data-id="act1">Kegiatan Membaca Bersama</p>
+          <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Belajar">
+          <p><strong>Belajar</strong></p>
+          <p>Judul Berita di sini</p>
         </div>
         <div class="grid-item">
-          <img src="https://via.placeholder.com/300x200?text=Foto+2" alt="Kegiatan 2" />
-          <p data-id="act2">Kelas Melukis Anak</p>
+          <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Bermain">
+          <p><strong>Bermain</strong></p>
+          <p>Judul Berita di sini</p>
         </div>
         <div class="grid-item">
-          <img src="https://via.placeholder.com/300x200?text=Foto+3" alt="Kegiatan 3" />
-          <p data-id="act3">Diskusi Buku Mingguan</p>
+          <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Aksi Sosial">
+          <p><strong>Aksi Sosial</strong></p>
+          <p>Judul Berita di sini</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2 data-id="gallery-title">Galeri Karya Anak</h2>
+      <h2>Galeri Taman Baca Anjelas</h2>
       <div class="gallery-wrapper">
         <div class="thumbnail-carousel">
-          <img src="foto1.jpg" alt="Karya 1" onclick="openModal(this)" />
-          <img src="foto2.jpg" alt="Karya 2" onclick="openModal(this)" />
-          <img src="foto3.jpg" alt="Karya 3" onclick="openModal(this)" />
+          <img src="foto1.jpg" alt="1" onclick="openModal(this)">
+          <img src="foto2.jpg" alt="2" onclick="openModal(this)">
+          <img src="foto3.jpg" alt="3" onclick="openModal(this)">
         </div>
         <div class="featured-image">
           <img id="mainImage" src="foto1.jpg" alt="Gambar Besar" />
@@ -69,67 +72,23 @@
   <!-- Modal popup -->
   <div id="modal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage" />
+    <img class="modal-content" id="modalImage">
   </div>
 
   <footer>
     <p>&copy; 2025 Taman Baca Anjelas</p>
   </footer>
 
-  <!-- Script Bahasa dan Modal -->
   <script>
-    const translations = {
-      id: {
-        title: "Selamat Datang di Taman Baca Anjelas",
-        subtitle: "Belajar, Bermain, dan Tumbuh Bersama.",
-        "nav-home": "Beranda",
-        "nav-about": "Tentang Kami",
-        "nav-activities": "Kegiatan",
-        "nav-gallery": "Karya Anak",
-        "nav-contact": "Kontak",
-        "about-title": "Tentang Kami",
-        "about-text": "Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.",
-        "activity-title": "Kegiatan Terbaru",
-        act1: "Kegiatan Membaca Bersama",
-        act2: "Kelas Melukis Anak",
-        act3: "Diskusi Buku Mingguan",
-        "gallery-title": "Galeri Karya Anak"
-      },
-      en: {
-        title: "Welcome to Taman Baca Anjelas",
-        subtitle: "Learn, Play, and Grow Together.",
-        "nav-home": "Home",
-        "nav-about": "About Us",
-        "nav-activities": "Activities",
-        "nav-gallery": "Children's Work",
-        "nav-contact": "Contact",
-        "about-title": "About Us",
-        "about-text": "Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.",
-        "activity-title": "Latest Activities",
-        act1: "Group Reading Activity",
-        act2: "Children’s Painting Class",
-        act3: "Weekly Book Discussion",
-        "gallery-title": "Children's Gallery"
-      }
-    };
-
-    function switchLanguage(lang) {
-      const elements = document.querySelectorAll('[data-id]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-id');
-        el.textContent = translations[lang][key] || el.textContent;
-      });
-    }
-
     function openModal(img) {
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modalImage');
-      modal.style.display = 'block';
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
       modalImg.src = img.src;
     }
 
     function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+      document.getElementById("modal").style.display = "none";
     }
   </script>
 </body>
