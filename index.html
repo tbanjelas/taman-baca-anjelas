@@ -44,6 +44,25 @@
       </div>
     </section>
   </main>
+<section>
+  <h2>Galeri Karya Anak</h2>
+  <div class="gallery-wrapper">
+    <div class="thumbnail-carousel">
+      <img src="foto1.jpg" alt="Karya 1" onclick="openModal(this)">
+      <img src="foto2.jpg" alt="Karya 2" onclick="openModal(this)">
+      <img src="foto3.jpg" alt="Karya 3" onclick="openModal(this)">
+    </div>
+    <div class="featured-image">
+      <img id="mainImage" src="foto1.jpg" alt="Gambar Besar" />
+    </div>
+  </div>
+</section>
+
+<!-- Modal popup -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
   <footer>
     <p>&copy; 2025 Taman Baca Anjelas</p>
