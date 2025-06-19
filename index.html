@@ -4,21 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taman Baca Anjelas</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .header-green {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e1e1e;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-box {
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      padding: 0.2em 0.6em;
+      font-size: 2rem;
+      border-radius: 4px;
+    }
+
+    .main-title {
+      font-size: 2.5rem;
+      margin: 0;
+      background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1rem;
+      color: #eee;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #222;
+      color: yellow;
+      padding: 0.5rem 0;
+      border-top: 2px solid #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background-color: #292929;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .navbar a:hover {
+      color: #ffcc00;
+    }
+
+    .language-switch-inline {
+      margin-left: auto;
+    }
+
+    .language-switch-inline a {
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0 0.4rem;
+      color: #ffcc00;
+    }
+
+    .language-switch-inline a:hover {
+      color: #40e0d0;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffd700;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-item {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .grid-item img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .slide-image {
+      width: 100%;
+      display: none;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+
   <header class="header-green">
     <div class="logo-container">
       <span class="logo-box">TBA</span>
-      <h1 class="main-title">Taman Baca Anjelas</h1>
-    </div>
-    <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
-    <div class="language-switch">
-      <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
-      <a href="#" onclick="switchLanguage('en')" class="lang-btn">EN</a>
+      <div>
+        <h1 class="main-title">Taman Baca Anjelas</h1>
+        <p class="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
+      </div>
     </div>
   </header>
+
+  <div class="marquee-container">
+    <div class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
+  </div>
 
   <nav class="navbar">
     <a href="#">Beranda</a>
@@ -29,10 +194,13 @@
     <a href="#"><i class="fas fa-search"></i></a>
     <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
     <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <span class="language-switch-inline">
+      <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
+      <a href="#" onclick="switchLanguage('en')" class="lang-btn">EN</a>
+    </span>
   </nav>
 
   <main>
-    <!-- Bahasa Indonesia -->
     <div id="content-id">
       <section class="section">
         <h2 class="section-title">Tentang Kami</h2>
@@ -72,7 +240,6 @@
       </section>
     </div>
 
-    <!-- Bahasa Inggris -->
     <div id="content-en" style="display: none;">
       <section class="section">
         <h2 class="section-title">About Us</h2>
@@ -121,7 +288,7 @@
     let slideIndex = 0;
     const showSlides = () => {
       const slides = document.querySelectorAll(".slide-image");
-      slides.forEach((slide, i) => slide.style.display = "none");
+      slides.forEach(slide => slide.style.display = "none");
       slideIndex++;
       if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
