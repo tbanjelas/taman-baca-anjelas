@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taman Baca Anjelas</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <div class="butterfly butterfly-left">🦋</div>
-  <div class="butterfly butterfly-right">🦋</div>
+  <!-- Kupu-kupu animasi, dua arah -->
+  <img src="https://cdn.pixabay.com/photo/2013/07/13/10/07/butterfly-158531_1280.png" class="butterfly left" alt="butterfly">
+  <img src="https://cdn.pixabay.com/photo/2013/07/13/10/07/butterfly-158531_1280.png" class="butterfly right" alt="butterfly">
 
-  <header class="header-green">
-    <h1><span class="tba">TBA</span> <span class="judul-pelangi">Taman Baca Anjelas</span></h1>
+  <header>
+    <h1><span class="tba">TBA</span> <span class="judul">Taman Baca Anjelas</span></h1>
     <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
     <div class="language-switch">
       <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
@@ -36,9 +37,8 @@
     <div id="content-id">
       <section class="section">
         <h2 class="section-title">Tentang Kami</h2>
-        <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
+        <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia ...</p>
       </section>
-
       <section class="section">
         <h2 class="section-title">Kegiatan Taman Baca Anjelas</h2>
         <div class="grid-container">
@@ -59,7 +59,6 @@
           </div>
         </div>
       </section>
-
       <section class="section">
         <h2 class="section-title">Galeri Taman Baca Anjelas</h2>
         <div class="gallery-wrapper">
@@ -69,19 +68,18 @@
             <img src="foto3.jpg" alt="3" onclick="openModal(this)">
           </div>
           <div class="featured-image">
-            <img id="mainImage" src="foto1.jpg" alt="Gambar Besar">
+            <img id="mainImage" src="foto1.jpg" alt="Gambar Besar" />
           </div>
         </div>
       </section>
     </div>
 
     <!-- Bahasa Inggris -->
-    <div id="content-en" style="display: none;">
+    <div id="content-en" style="display:none">
       <section class="section">
         <h2 class="section-title">About Us</h2>
-        <p>Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.</p>
+        <p>Taman Baca Anjelas is a learning space for all ages ...</p>
       </section>
-
       <section class="section">
         <h2 class="section-title">Anjelas Reading Garden Activities</h2>
         <div class="grid-container">
@@ -102,7 +100,6 @@
           </div>
         </div>
       </section>
-
       <section class="section">
         <h2 class="section-title">Anjelas Reading Garden Gallery</h2>
         <div class="gallery-wrapper">
@@ -112,14 +109,13 @@
             <img src="foto3.jpg" alt="3" onclick="openModal(this)">
           </div>
           <div class="featured-image">
-            <img id="mainImage" src="foto1.jpg" alt="Main Image">
+            <img id="mainImage" src="foto1.jpg" alt="Main Image" />
           </div>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- Modal popup -->
   <div id="modal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="modalImage">
@@ -131,26 +127,15 @@
 
   <script>
     function openModal(img) {
-      const modal = document.getElementById("modal");
-      const modalImg = document.getElementById("modalImage");
-      modal.style.display = "block";
-      modalImg.src = img.src;
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modalImage").src = img.src;
     }
-
     function closeModal() {
       document.getElementById("modal").style.display = "none";
     }
-
     function switchLanguage(lang) {
-      const idContent = document.getElementById("content-id");
-      const enContent = document.getElementById("content-en");
-      if (lang === "id") {
-        idContent.style.display = "block";
-        enContent.style.display = "none";
-      } else {
-        idContent.style.display = "none";
-        enContent.style.display = "block";
-      }
+      document.getElementById("content-id").style.display = (lang === 'id') ? 'block':'none';
+      document.getElementById("content-en").style.display = (lang === 'en') ? 'block':'none';
     }
   </script>
 </body>
