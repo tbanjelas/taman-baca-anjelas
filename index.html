@@ -2,135 +2,123 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taman Baca Anjelas</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <h1>Taman Baca Anjelas</h1>
-    <p>Belajar, Bermain, dan Tumbuh Bersama</p>
+  <header class="header-green">
+    <h1 class="brand">
+      <span class="brand-box">TBA</span>
+      <span class="brand-text" id="brand-text">Taman Baca Anjelas</span>
+    </h1>
+    <p id="tagline">Belajar, Bermain, dan Tumbuh Bersama.</p>
     <div class="language-switch">
-      <button onclick="switchLanguage('id')">🇮🇩 ID</button>
-      <button onclick="switchLanguage('en')">🇬🇧 EN</button>
+      <a href="#" onclick="switchLanguage('id')">ID</a> |
+      <a href="#" onclick="switchLanguage('en')">EN</a>
     </div>
   </header>
 
   <nav class="navbar">
-    <a href="#">Beranda</a>
-    <a href="#">Tentang Kami</a>
-    <a href="#">Kegiatan</a>
-    <a href="#">Galeri</a>
-    <a href="#">Kontak</a>
+    <a href="#" id="nav-home">Beranda</a>
+    <a href="#" id="nav-about">Tentang Kami</a>
+    <a href="#" id="nav-activities">Kegiatan</a>
+    <a href="#" id="nav-gallery">Galeri</a>
+    <a href="#" id="nav-contact">Kontak</a>
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
   </nav>
 
   <main>
-    <!-- ID -->
-    <section id="content-id">
+    <div id="content-id">
       <section class="section">
-        <h2>Tentang Kami</h2>
-        <p>Taman Baca Anjelas adalah ruang belajar inklusif untuk semua usia.</p>
+        <h2 class="section-title">Tentang Kami</h2>
+        <p id="about-text">Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
       </section>
+      <section class="section">
+        <h2 class="section-title">Kegiatan</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Belajar">
+            <p><strong>Belajar</strong></p>
+            <p>Judul berita kegiatan belajar</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Bermain">
+            <p><strong>Bermain</strong></p>
+            <p>Judul berita kegiatan bermain</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Aksi Sosial">
+            <p><strong>Aksi Sosial</strong></p>
+            <p>Judul berita kegiatan sosial</p>
+          </div>
+        </div>
+      </section>
+    </div>
 
+    <div id="content-en" style="display:none">
       <section class="section">
-        <h2>Kegiatan</h2>
-        <div class="grid">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Belajar" />
-            <h3>Belajar</h3>
-            <p>Judul berita belajar.</p>
+        <h2 class="section-title">About Us</h2>
+        <p id="about-text-en">Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.</p>
+      </section>
+      <section class="section">
+        <h2 class="section-title">Activities</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Learn" alt="Learn">
+            <p><strong>Learning</strong></p>
+            <p>News title for learning</p>
           </div>
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Bermain" />
-            <h3>Bermain</h3>
-            <p>Judul berita bermain.</p>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Play" alt="Play">
+            <p><strong>Playing</strong></p>
+            <p>News title for playing</p>
           </div>
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Aksi Sosial" />
-            <h3>Aksi Sosial</h3>
-            <p>Judul aksi sosial.</p>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Social+Action" alt="Social Action">
+            <p><strong>Social Action</strong></p>
+            <p>News title for social activity</p>
           </div>
         </div>
       </section>
-
-      <section class="section">
-        <h2>Galeri</h2>
-        <div class="gallery">
-          <img src="https://via.placeholder.com/150x100" alt="1" onclick="openModal(this)">
-          <img src="https://via.placeholder.com/150x100" alt="2" onclick="openModal(this)">
-          <img src="https://via.placeholder.com/150x100" alt="3" onclick="openModal(this)">
-        </div>
-        <div class="featured">
-          <img id="mainImage" src="https://via.placeholder.com/150x100" alt="Featured" />
-        </div>
-      </section>
-    </section>
-
-    <!-- EN -->
-    <section id="content-en" style="display:none;">
-      <section class="section">
-        <h2>About Us</h2>
-        <p>Taman Baca Anjelas is a learning space for all ages.</p>
-      </section>
-
-      <section class="section">
-        <h2>Activities</h2>
-        <div class="grid">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Learn" alt="Learn" />
-            <h3>Learning</h3>
-            <p>News title learning.</p>
-          </div>
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Play" alt="Play" />
-            <h3>Playing</h3>
-            <p>News title playing.</p>
-          </div>
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200?text=Social+Action" alt="Social Action" />
-            <h3>Social Action</h3>
-            <p>News title social action.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Gallery</h2>
-        <div class="gallery">
-          <img src="https://via.placeholder.com/150x100" alt="1" onclick="openModal(this)">
-          <img src="https://via.placeholder.com/150x100" alt="2" onclick="openModal(this)">
-          <img src="https://via.placeholder.com/150x100" alt="3" onclick="openModal(this)">
-        </div>
-        <div class="featured">
-          <img id="mainImage" src="https://via.placeholder.com/150x100" alt="Featured" />
-        </div>
-      </section>
-    </section>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Taman Baca Anjelas</p>
   </footer>
 
-  <div id="modal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-
   <script>
     function switchLanguage(lang) {
-      document.getElementById("content-id").style.display = (lang === "id") ? "block" : "none";
-      document.getElementById("content-en").style.display = (lang === "en") ? "block" : "none";
-    }
+      const idContent = document.getElementById("content-id");
+      const enContent = document.getElementById("content-en");
+      const tagline = document.getElementById("tagline");
+      const brandText = document.getElementById("brand-text");
 
-    function openModal(img) {
-      document.getElementById("modalImage").src = img.src;
-      document.getElementById("modal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
+      if (lang === 'en') {
+        idContent.style.display = 'none';
+        enContent.style.display = 'block';
+        tagline.innerText = "Learn, Play, and Grow Together.";
+        brandText.innerText = "Anjelas Reading Garden";
+        document.getElementById("nav-home").innerText = "Home";
+        document.getElementById("nav-about").innerText = "About";
+        document.getElementById("nav-activities").innerText = "Activities";
+        document.getElementById("nav-gallery").innerText = "Gallery";
+        document.getElementById("nav-contact").innerText = "Contact";
+      } else {
+        idContent.style.display = 'block';
+        enContent.style.display = 'none';
+        tagline.innerText = "Belajar, Bermain, dan Tumbuh Bersama.";
+        brandText.innerText = "Taman Baca Anjelas";
+        document.getElementById("nav-home").innerText = "Beranda";
+        document.getElementById("nav-about").innerText = "Tentang Kami";
+        document.getElementById("nav-activities").innerText = "Kegiatan";
+        document.getElementById("nav-gallery").innerText = "Galeri";
+        document.getElementById("nav-contact").innerText = "Kontak";
+      }
     }
   </script>
 </body>
