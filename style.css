@@ -1,3 +1,4 @@
+/* Reset dasar */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,6 +6,7 @@ body {
   color: #eee;
 }
 
+/* Header dan judul */
 .header-green {
   text-align: center;
   padding: 1rem;
@@ -23,17 +25,18 @@ body {
   color: black;
   font-weight: bold;
   padding: 0.2em 0.6em;
-  font-size: 2rem;
+  font-size: 2.2rem;
   border-radius: 4px;
 }
 
 .main-title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Tombol bahasa */
 .language-switch {
   margin-top: 0.5rem;
 }
@@ -42,32 +45,40 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 0.2em 0.6em;
+  border-radius: 4px;
+  background-color: #333;
   color: #ffcc00;
+  transition: all 0.3s ease;
 }
 
 .language-switch a:hover {
+  background-color: #555;
   color: #40e0d0;
 }
 
+/* Navigasi */
 .navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   background-color: #292929;
-  padding: 1rem;
+  padding: 1.2rem 0.5rem;
 }
 
 .navbar a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
   color: #ffcc00;
 }
 
+/* Konten utama */
 main {
   padding: 2rem;
 }
@@ -77,11 +88,12 @@ main {
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin-bottom: 1rem;
   color: #ffd700;
 }
 
+/* Grid kegiatan */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -103,6 +115,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
+/* Slideshow galeri */
 .slideshow-container {
   position: relative;
   max-width: 100%;
@@ -116,6 +129,7 @@ main {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
+/* Footer */
 footer {
   background-color: #1e1e1e;
   color: #ccc;
