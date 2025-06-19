@@ -64,21 +64,17 @@
 
     .marquee-text {
       display: inline-block;
-      padding-left: 100%;
-      animation: marquee 20s linear infinite;
+      position: absolute;
+      white-space: nowrap;
+      animation: marquee-pingpong 15s linear infinite;
       font-weight: bold;
       font-size: 1rem;
     }
 
-    .marquee-duplicate {
-      display: inline-block;
-      padding-left: 2rem;
-      animation: marquee 20s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+    @keyframes marquee-pingpong {
+      0%   { transform: translateX(100%); }
+      50%  { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .navbar {
@@ -186,8 +182,8 @@
   </header>
 
   <div class="marquee-container">
-    <div class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
-    <div class="marquee-duplicate">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
+    <div id="marquee-id" class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
+    <div id="marquee-en" class="marquee-text" style="display:none;">BIJELI VILLAGE - NOEMUTI - TTU - NTT - INDONESIA</div>
   </div>
 
   <nav class="navbar">
@@ -199,8 +195,6 @@
     <a href="#"><i class="fas fa-search"></i></a>
     <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
     <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.facebook.com/tamanbacaanjelas" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.youtube.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-youtube"></i></a>
     <span class="language-switch-inline">
       <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
       <a href="#" onclick="switchLanguage('en')" class="lang-btn">EN</a>
@@ -208,16 +202,12 @@
   </nav>
 
   <main>
-    <!-- ID Content -->
     <div id="content-id">
-      <!-- Sections as before -->
-      ... [TIDAK DIUBAH — tetap sama seperti HTML-mu] ...
+      <!-- (bagian konten ID tetap seperti sebelumnya) -->
     </div>
 
-    <!-- EN Content -->
     <div id="content-en" style="display: none;">
-      <!-- Sections as before -->
-      ... [TIDAK DIUBAH — tetap sama seperti HTML-mu] ...
+      <!-- (bagian konten EN tetap seperti sebelumnya) -->
     </div>
   </main>
 
@@ -240,12 +230,19 @@
     function switchLanguage(lang) {
       const idContent = document.getElementById("content-id");
       const enContent = document.getElementById("content-en");
+      const marqueeID = document.getElementById("marquee-id");
+      const marqueeEN = document.getElementById("marquee-en");
+
       if (lang === "id") {
         idContent.style.display = "block";
         enContent.style.display = "none";
+        marqueeID.style.display = "inline-block";
+        marqueeEN.style.display = "none";
       } else {
         idContent.style.display = "none";
         enContent.style.display = "block";
+        marqueeID.style.display = "none";
+        marqueeEN.style.display = "inline-block";
       }
     }
   </script>
