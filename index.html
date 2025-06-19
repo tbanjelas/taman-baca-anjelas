@@ -53,7 +53,6 @@
 
     .marquee-container {
       overflow: hidden;
-      white-space: nowrap;
       background-color: #222;
       color: yellow;
       padding: 0.5rem 0;
@@ -63,10 +62,16 @@
 
     .marquee-text {
       display: inline-block;
+      white-space: nowrap;
       transform: translateX(100%);
       animation: marquee 20s linear infinite;
       font-weight: bold;
       font-size: 1rem;
+      padding-left: 100%;
+    }
+
+    .marquee-text.second {
+      animation-delay: 10s;
     }
 
     @keyframes marquee {
@@ -181,8 +186,10 @@
     </div>
   </header>
 
+  <!-- 🔁 Dua tulisan berjalan -->
   <div class="marquee-container">
     <div class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
+    <div class="marquee-text second">TAMAN BACA ANJELAS UNTUK SEMUA — BELAJAR BERSAMA — BERBAGI BUKU — TUMBUH CERDAS</div>
   </div>
 
   <nav class="navbar">
