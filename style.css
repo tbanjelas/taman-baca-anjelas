@@ -1,3 +1,4 @@
+/* Umum */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,6 +6,7 @@ body {
   color: #eee;
 }
 
+/* Header */
 .header-green {
   text-align: center;
   padding: 1rem;
@@ -42,6 +44,7 @@ body {
   color: #eee;
 }
 
+/* Marquee */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -54,16 +57,22 @@ body {
 
 .marquee-text {
   display: inline-block;
+  transform: translateX(100%);
   animation: marquee 20s linear infinite;
   font-weight: bold;
   font-size: 1rem;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -78,13 +87,13 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
   color: #ffcc00;
 }
 
+/* Language Switch */
 .language-switch-inline {
   margin-left: auto;
 }
@@ -94,13 +103,13 @@ body {
   font-weight: bold;
   padding: 0 0.4rem;
   color: #ffcc00;
-  transition: color 0.3s ease;
 }
 
 .language-switch-inline a:hover {
   color: #40e0d0;
 }
 
+/* Konten Utama */
 main {
   padding: 2rem;
 }
@@ -115,6 +124,7 @@ main {
   color: #ffd700;
 }
 
+/* Grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -128,12 +138,6 @@ main {
   text-align: center;
   color: #fff;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.grid-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.2);
 }
 
 .grid-item img {
@@ -142,6 +146,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
+/* Galeri Slideshow */
 .slideshow-container {
   position: relative;
   max-width: 100%;
@@ -155,10 +160,26 @@ main {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
+/* Footer */
 footer {
   background-color: #1e1e1e;
   color: #ccc;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+/* Responsive optional (tambahan) */
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .logo-container {
+    flex-direction: column;
+  }
 }
