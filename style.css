@@ -1,12 +1,12 @@
-/* === General Reset & Base === */
+/* Reset & base */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #1e1e1e;
+  background-color: #121212;
   color: #f0f0f0;
 }
 
-/* === Header & Title (tidak ubah warna) === */
+/* Header */
 header {
   background-color: #222;
   text-align: center;
@@ -16,71 +16,70 @@ header {
 }
 
 header h1 {
-  font-size: 2.5rem;
   margin: 0;
-  /* HARGA WAJAR: warna teks TBA dan judul tidak diubah */
-  color: #ffffff;
+  font-size: 2.5rem;
+  color: #fff;
 }
-
 header .tba {
-  /* Tetap putih atau seperti sebelumnya */
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: bold;
 }
-
-header .judul-pelangi {
-  /* Juga tidak berubah */
+header .judul {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #cccccc;
   margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-/* Bahasa (ID/EN) tetap cerah */
+/* Bahasa button */
 .language-switch {
   margin-top: 1rem;
 }
-
 .language-switch .lang-btn {
-  color: #ffcc00;
+  color: #00ccff;
   font-weight: bold;
+  font-size: 1.1rem;
   text-decoration: none;
-  margin: 0 0.5rem;
+  padding: 0 5px;
   transition: color 0.3s;
 }
 .language-switch .lang-btn:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Animasi Kupu-Kupu kiri & kanan */
+/* Kupu-kupu */
 .butterfly {
   position: absolute;
-  width: 40px;
-  z-index: 1;
+  width: 50px;
   opacity: 0.9;
-  animation: flutter 8s infinite ease-in-out;
+  z-index: 1;
 }
-
-.butterfly-left { top: 20px; left: -50px; animation-name: flutterLeft; }
-.butterfly-right { top: 40px; right: -50px; animation-name: flutterRight; }
-
-@keyframes flutterLeft {
+.butterfly.left {
+  animation: flyLeft 8s infinite ease-in-out;
+  top: 20px;
+  left: -60px;
+}
+.butterfly.right {
+  animation: flyRight 8s infinite ease-in-out;
+  top: 20px;
+  right: -60px;
+}
+@keyframes flyLeft {
   0% { transform: translateX(0) rotate(0); }
-  50% { transform: translateX(calc(50vw - 40px)) rotate(180deg); }
-  100% { transform: translateX(calc(100vw + 50px)) rotate(360deg); }
+  50% { transform: translateX(calc(50vw - 100px)) translateY(-40px) rotate(45deg); }
+  100% { transform: translateX(calc(100vw + 60px)) rotate(90deg); }
 }
-
-@keyframes flutterRight {
+@keyframes flyRight {
   0% { transform: translateX(0) rotate(0); }
-  50% { transform: translateX(calc(-50vw + 40px)) rotate(-180deg); }
-  100% { transform: translateX(calc(-100vw - 50px)) rotate(-360deg); }
+  50% { transform: translateX(calc(-50vw + 100px)) translateY(-40px) rotate(-45deg); }
+  100% { transform: translateX(calc(-100vw - 60px)) rotate(-90deg); }
 }
 
-/* === Navbar (font lebih besar & jarak) === */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
@@ -89,7 +88,6 @@ header p {
   background-color: #111;
   padding: 1rem;
 }
-
 .navbar a {
   color: #0ff;
   text-decoration: none;
@@ -97,96 +95,84 @@ header p {
   font-weight: bold;
   transition: color 0.3s;
 }
-
 .navbar a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
-/* === Content Sections === */
+/* Sections */
 .section {
-  text-align: center;
   padding: 2rem 1rem;
 }
-
 .section-title {
   font-size: 2rem;
   color: #ff69b4;
   margin-bottom: 1rem;
+  text-align: center;
 }
-
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
 }
-
 .grid-item {
+  width: 280px;
   background-color: #2a2a2a;
   border-radius: 8px;
   padding: 1rem;
-  width: 280px;
   transition: transform 0.3s;
 }
-
 .grid-item:hover {
   transform: scale(1.03);
 }
-
 .grid-item img {
   width: 100%;
   border-radius: 6px;
 }
-
 .grid-item p {
   margin: 0.5rem 0;
 }
 
+/* Gallery */
 .gallery-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-
 .thumbnail-carousel {
   display: flex;
   gap: 0.5rem;
 }
-
 .thumbnail-carousel img {
   width: 80px;
   cursor: pointer;
   border-radius: 6px;
   transition: transform 0.3s;
 }
-
 .thumbnail-carousel img:hover {
   transform: scale(1.1);
 }
-
 .featured-image img {
   width: 100%;
   max-width: 500px;
   border-radius: 10px;
 }
 
-/* === Modal Popup === */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
+  top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(0,0,0,0.9);
+  z-index: 9;
 }
-
 .modal-content {
   display: block;
   margin: auto;
   max-width: 90%;
 }
-
 .close {
   position: absolute;
   top: 20px; right: 40px;
@@ -195,11 +181,11 @@ header p {
   cursor: pointer;
 }
 
-/* === Footer === */
+/* Footer */
 footer {
   background-color: #111;
-  padding: 1rem;
-  text-align: center;
   color: #aaa;
+  text-align: center;
+  padding: 1rem 0;
   font-size: 0.9rem;
 }
