@@ -51,7 +51,6 @@
       color: #eee;
     }
 
-    /* === Update Start: Marquee CSS === */
     .marquee-container {
       overflow: hidden;
       white-space: nowrap;
@@ -65,21 +64,22 @@
 
     .marquee-text {
       display: inline-block;
-      animation: marquee 15s linear infinite;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
       font-weight: bold;
       font-size: 1rem;
-      padding-right: 2rem;
     }
 
-    .marquee-container .marquee-text:nth-child(2) {
-      animation-delay: 7.5s;
+    .marquee-duplicate {
+      display: inline-block;
+      padding-left: 2rem;
+      animation: marquee 20s linear infinite;
     }
 
     @keyframes marquee {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    /* === Update End === */
 
     .navbar {
       display: flex;
@@ -185,12 +185,10 @@
     </div>
   </header>
 
-  <!-- === Update Start: Duplikat marquee-text untuk animasi berurutan === -->
   <div class="marquee-container">
-    <span class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</span>
-    <span class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</span>
+    <div class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
+    <div class="marquee-duplicate">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
   </div>
-  <!-- === Update End === -->
 
   <nav class="navbar">
     <a href="#">Beranda</a>
@@ -201,6 +199,8 @@
     <a href="#"><i class="fas fa-search"></i></a>
     <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
     <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/tamanbacaanjelas" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.youtube.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-youtube"></i></a>
     <span class="language-switch-inline">
       <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
       <a href="#" onclick="switchLanguage('en')" class="lang-btn">EN</a>
@@ -208,15 +208,23 @@
   </nav>
 
   <main>
-    <!-- id dan en content tetap -->
-    ... [tidak berubah, tetap seperti sebelumnya] ...
+    <!-- ID Content -->
+    <div id="content-id">
+      <!-- Sections as before -->
+      ... [TIDAK DIUBAH — tetap sama seperti HTML-mu] ...
+    </div>
+
+    <!-- EN Content -->
+    <div id="content-en" style="display: none;">
+      <!-- Sections as before -->
+      ... [TIDAK DIUBAH — tetap sama seperti HTML-mu] ...
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Taman Baca Anjelas</p>
   </footer>
 
-  <!-- === Update Start: Script lengkap dengan marquee & navbar language switch === -->
   <script>
     let slideIndex = 0;
     const showSlides = () => {
@@ -232,28 +240,6 @@
     function switchLanguage(lang) {
       const idContent = document.getElementById("content-id");
       const enContent = document.getElementById("content-en");
-
-      const textMap = {
-        id: {
-          nav: ["Beranda", "Tentang Kami", "Kegiatan", "Karya Anak", "Kontak"],
-          marquee: "DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA"
-        },
-        en: {
-          nav: ["Home", "About Us", "Activities", "Children's Works", "Contact"],
-          marquee: "BIJELI VILLAGE - NOEMUTI - TTU - NTT - INDONESIA"
-        }
-      };
-
-      const navLinks = document.querySelectorAll(".navbar a");
-      for (let i = 0; i < 5; i++) {
-        navLinks[i].textContent = textMap[lang].nav[i];
-      }
-
-      const marqueeSpans = document.querySelectorAll(".marquee-text");
-      marqueeSpans.forEach(span => {
-        span.textContent = textMap[lang].marquee;
-      });
-
       if (lang === "id") {
         idContent.style.display = "block";
         enContent.style.display = "none";
@@ -263,7 +249,5 @@
       }
     }
   </script>
-  <!-- === Update End === -->
-
 </body>
 </html>
