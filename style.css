@@ -1,65 +1,41 @@
-/* style.css */
-
+/* General Reset */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #1e1e1e;
   color: #f0f0f0;
 }
 
-.header-green {
+/* Header */
+header {
+  background-color: #222;
   text-align: center;
   padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
 }
 
-h1 {
+header h1 {
   font-size: 2.5rem;
-  margin: 0.5rem 0;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
-.tba-text {
-  background-color: #ffcc00;
-  color: #000;
-  padding: 0.2rem 0.5rem;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 1.5rem;
-}
-
-.rainbow-text {
-  background-image: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2rem;
+  margin: 0;
+}
+
+header h1 span {
+  font-size: 3.2rem;
   font-weight: bold;
-  margin-left: 0.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ff0, #0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.butterfly {
-  position: absolute;
-  width: 60px;
-  left: -100px;
-  top: 20px;
-  animation: fly 6s ease-in-out infinite;
-}
-
-@keyframes fly {
-  0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  50% {
-    transform: translateX(700px) translateY(-50px) rotate(30deg);
-  }
-  100% {
-    transform: translateX(0) rotate(-20deg);
-  }
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
 }
 
 .language-switch {
@@ -67,54 +43,96 @@ h1 {
 }
 
 .language-switch a {
-  color: #fff;
-  text-decoration: none;
   margin: 0 0.5rem;
+  color: #ffcc00;
   font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
+.language-switch a:hover {
+  color: #ffffff;
+}
+
+/* Butterfly Animation */
+.butterfly {
+  position: absolute;
+  width: 40px;
+  animation: flutter 8s infinite ease-in-out;
+  z-index: 0;
+}
+
+.butterfly.left {
+  top: 10px;
+  left: 0;
+  animation-name: flutterLeft;
+}
+
+.butterfly.right {
+  top: 60px;
+  right: 0;
+  animation-name: flutterRight;
+}
+
+@keyframes flutterLeft {
+  0% { left: 0; top: 10px; transform: rotate(0deg); }
+  50% { left: 50%; top: 50px; transform: rotate(180deg); }
+  100% { left: 100%; top: 10px; transform: rotate(360deg); }
+}
+
+@keyframes flutterRight {
+  0% { right: 0; top: 60px; transform: rotate(0deg); }
+  50% { right: 50%; top: 80px; transform: rotate(180deg); }
+  100% { right: 100%; top: 60px; transform: rotate(360deg); }
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #333;
-  padding: 1rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
+  background-color: #111;
+  padding: 1rem;
 }
 
 .navbar a {
-  color: #fff;
+  color: #0ff;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
+.navbar a:hover {
+  color: #fff;
+}
+
+/* Sections */
 .section {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
 .section-title {
-  font-size: 1.8rem;
-  color: #ffd700;
+  font-size: 2rem;
+  color: #ff69b4;
   margin-bottom: 1rem;
 }
 
 .grid-container {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .grid-item {
-  background-color: #2e2e2e;
-  padding: 1rem;
+  background-color: #2a2a2a;
   border-radius: 10px;
-  width: 300px;
-  transition: transform 0.3s ease;
+  padding: 1rem;
+  width: 280px;
+  transition: transform 0.3s;
 }
 
 .grid-item:hover {
@@ -122,79 +140,79 @@ h1 {
 }
 
 .grid-item img {
-  max-width: 100%;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 8px;
 }
 
+.grid-item p {
+  margin: 0.5rem 0;
+}
+
+/* Gallery */
 .gallery-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
 }
 
 .thumbnail-carousel {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .thumbnail-carousel img {
-  width: 100px;
+  width: 80px;
   cursor: pointer;
-  border-radius: 5px;
-  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: transform 0.3s;
 }
 
 .thumbnail-carousel img:hover {
-  border-color: #ffd700;
+  transform: scale(1.1);
 }
 
 .featured-image img {
   width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
+  max-width: 500px;
+  border-radius: 12px;
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  z-index: 9;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
 }
 
 .modal-content {
+  display: block;
+  margin: auto;
   max-width: 90%;
-  max-height: 80%;
 }
 
 .close {
   position: absolute;
-  top: 1rem;
-  right: 2rem;
-  font-size: 2rem;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
   color: #fff;
   cursor: pointer;
 }
 
+/* Footer */
 footer {
-  background-color: #222;
+  background-color: #111;
+  color: #ccc;
   text-align: center;
-  padding: 1rem;
-  color: #aaa;
+  padding: 1rem 0;
   font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-  .grid-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
 }
