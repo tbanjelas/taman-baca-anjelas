@@ -5,35 +5,50 @@
   box-sizing: border-box;
 }
 
-/* Warna dasar ramah anak */
+/* Body - dark mode */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #003300; /* Hijau tua */
+  background-color: #121212;
   color: #ffffff;
   line-height: 1.6;
 }
 
 /* Header */
 header.header-green {
-  background-color: #004d26;
+  background-color: #1e1e1e;
   padding: 2rem 1rem;
   text-align: center;
-  border-bottom: 5px solid #00cc66;
+  border-bottom: 4px solid #333;
 }
 
 header.header-green h1 {
-  font-size: 2.5rem;
-  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.4rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
+header.header-green h1 span {
+  background: #000;
+  color: #FFD700;
+  padding: 4px 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+header.header-green h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 8px auto 0;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  border-radius: 10px;
+}
+
 header.header-green p {
   margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #ddffdd;
+  font-size: 1.1rem;
+  color: #cccccc;
 }
 
 /* Language switch */
@@ -43,7 +58,7 @@ header.header-green p {
 }
 
 .language-switch a {
-  color: #66ff99;
+  color: #00ccff;
   text-decoration: none;
   margin: 0 5px;
   font-weight: bold;
@@ -55,28 +70,30 @@ header.header-green p {
 
 /* Navbar */
 .navbar {
-  background-color: #006633;
+  background-color: #181818;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.8rem;
+  padding: 1rem;
   gap: 1rem;
 }
 
 .navbar a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.1rem;
-  padding: 0.4rem 0.8rem;
-  transition: background 0.3s;
-  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .navbar a:hover {
-  background-color: #00cc66;
+  background-color: #333;
+  color: #00ffcc;
 }
 
-/* Section umum */
+/* Section */
 .section {
   padding: 2rem 1rem;
 }
@@ -84,9 +101,8 @@ header.header-green p {
 .section-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #aaffaa;
+  color: #66ffcc;
   text-align: center;
-  text-shadow: 1px 1px 2px #000;
 }
 
 /* Grid kegiatan */
@@ -98,7 +114,7 @@ header.header-green p {
 }
 
 .grid-item {
-  background-color: #004d26;
+  background-color: #222;
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
@@ -117,6 +133,7 @@ header.header-green p {
 
 .grid-item p {
   margin-top: 0.5rem;
+  color: #ffffff;
 }
 
 /* Galeri */
@@ -143,7 +160,7 @@ header.header-green p {
 }
 
 .thumbnail-carousel img:hover {
-  border-color: #66ff99;
+  border-color: #66ffcc;
 }
 
 .featured-image img {
@@ -184,10 +201,25 @@ header.header-green p {
 
 /* Footer */
 footer {
-  background-color: #004d26;
-  color: #aaffaa;
+  background-color: #1e1e1e;
+  color: #aaa;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  border-top: 2px solid #00cc66;
+  border-top: 2px solid #333;
+}
+
+/* Responsive Font */
+@media screen and (max-width: 768px) {
+  header.header-green h1 {
+    font-size: 1.6rem;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
 }
