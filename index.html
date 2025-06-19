@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taman Baca Anjelas</title>
   <meta name="description" content="Taman Baca Anjelas adalah ruang belajar dan bermain di Desa Bijeli, NTT, untuk anak-anak dan semua kalangan.">
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
   <header class="header-green">
     <div class="logo-container">
       <span class="logo-box">TBA</span>
@@ -46,28 +45,30 @@
         <h2 class="section-title">Tentang Kami</h2>
         <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
       </section>
+
       <section class="section">
-        <h2 class="section-title">Kegiatan</h2>
+        <h2 class="section-title">Kegiatan Taman Baca Anjelas</h2>
         <div class="grid-container">
           <div class="grid-item">
-            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Belajar">
+            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Kegiatan belajar anak-anak di Taman Baca Anjelas">
             <p><strong>Belajar</strong></p>
             <p>Kelas membaca dan menulis bersama anak-anak SD</p>
           </div>
           <div class="grid-item">
-            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Bermain">
+            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Anak-anak bermain edukatif di luar ruangan">
             <p><strong>Bermain</strong></p>
             <p>Permainan edukatif di halaman baca</p>
           </div>
           <div class="grid-item">
-            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Aksi Sosial">
+            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Kegiatan sosial membersihkan lingkungan">
             <p><strong>Aksi Sosial</strong></p>
             <p>Bersih desa bersama relawan dan anak-anak</p>
           </div>
         </div>
       </section>
+
       <section class="section">
-        <h2 class="section-title">Galeri</h2>
+        <h2 class="section-title">Galeri Taman Baca Anjelas</h2>
         <div class="slideshow-container">
           <img class="slide-image" src="foto1.jpg" alt="Foto 1" onerror="this.style.display='none'">
           <img class="slide-image" src="foto2.jpg" alt="Foto 2" onerror="this.style.display='none'">
@@ -83,7 +84,38 @@
         <h2 class="section-title">About Us</h2>
         <p>Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.</p>
       </section>
-      <!-- English Activities and Gallery same structure -->
+
+      <section class="section">
+        <h2 class="section-title">Anjelas Reading Garden Activities</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Learn" alt="Learning activities at Taman Baca Anjelas">
+            <p><strong>Learning</strong></p>
+            <p>Reading and writing classes with elementary students</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Play" alt="Outdoor educational games">
+            <p><strong>Playing</strong></p>
+            <p>Fun educational games in the reading yard</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Social+Action" alt="Social action with kids and volunteers">
+            <p><strong>Social Action</strong></p>
+            <p>Village cleanup with volunteers and children</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Anjelas Reading Garden Gallery</h2>
+        <div class="slideshow-container">
+          <img class="slide-image" src="foto1.jpg" alt="Photo 1" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto2.jpg" alt="Photo 2" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto3.jpg" alt="Photo 3" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto4.jpg" alt="Photo 4" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto5.jpg" alt="Photo 5" onerror="this.style.display='none'">
+        </div>
+      </section>
     </div>
   </main>
 
@@ -93,19 +125,20 @@
 
   <script>
     let slideIndex = 0;
-    function showSlides() {
-      document.querySelectorAll('.slide-image').forEach(slide => slide.style.display = 'none');
-      slideIndex = (slideIndex % document.querySelectorAll('.slide-image').length) + 1;
-      document.querySelectorAll('.slide-image')[slideIndex-1].style.display = 'block';
+    const showSlides = () => {
+      const slides = document.querySelectorAll(".slide-image");
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000);
-    }
+    };
     showSlides();
 
     function switchLanguage(lang) {
-      document.getElementById('content-id').style.display = lang === 'id' ? 'block' : 'none';
-      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById("content-id").style.display = (lang === 'id') ? 'block' : 'none';
+      document.getElementById("content-en").style.display = (lang === 'en') ? 'block' : 'none';
     }
   </script>
-
 </body>
 </html>
