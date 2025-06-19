@@ -2,248 +2,219 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Taman Baca Anjelas</title>
-  <meta name="description" content="Taman Baca Anjelas adalah ruang belajar dan bermain di Desa Bijeli, NTT, untuk anak-anak dan semua kalangan.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #eee;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
     }
-
-    .header-green {
-      text-align: center;
+    header {
+      background-color: #111;
       padding: 1rem;
-      background-color: #1e1e1e;
+      text-align: center;
+      border-bottom: 3px solid #FFD700;
     }
-
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .logo-box {
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
-      padding: 0.2em 0.6em;
+    .logo {
       font-size: 2rem;
+      font-weight: bold;
+    }
+    .logo span {
+      color: #FFD700;
+      background: #FFD700;
+      color: #000;
+      padding: 0 0.3em;
       border-radius: 4px;
     }
-
-    .main-title {
-      font-size: 2.5rem;
-      margin: 0;
-      background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
+    .logo strong {
+      background: linear-gradient(to right, red, orange, green, cyan, blue, purple);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    .subtitle {
-      margin: 0;
-      font-size: 1rem;
-      color: #eee;
-    }
-
-    .marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
+    nav {
       background-color: #222;
-      color: yellow;
-      padding: 0.5rem 0;
-      border-top: 2px solid #ffcc00;
-      border-bottom: 2px solid #ffcc00;
-      position: relative;
-    }
-
-    .marquee-text {
-      display: inline-block;
-      position: absolute;
-      white-space: nowrap;
-      animation: marquee-pingpong 15s linear infinite;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    @keyframes marquee-pingpong {
-      0%   { transform: translateX(100%); }
-      50%  { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    .navbar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
-      background-color: #292929;
-      padding: 1rem;
       align-items: center;
-    }
-
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .navbar a:hover {
-      color: #ffcc00;
-    }
-
-    .language-switch-inline {
-      margin-left: auto;
-    }
-
-    .language-switch-inline a {
-      text-decoration: none;
+      gap: 1.2rem;
+      padding: 0.8rem;
       font-weight: bold;
-      padding: 0 0.4rem;
-      color: #ffcc00;
     }
-
-    .language-switch-inline a:hover {
-      color: #40e0d0;
+    nav a {
+      color: white;
+      text-decoration: none;
     }
-
+    nav a:hover {
+      color: #FFD700;
+    }
+    .language-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 1.3rem;
+      font-weight: bold;
+    }
+    .language-toggle span {
+      cursor: pointer;
+      margin: 0 0.3em;
+    }
     main {
       padding: 2rem;
     }
-
     .section {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
-
     .section-title {
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #ffd700;
+      color: #FFD700;
     }
-
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      gap: 1rem;
     }
-
     .grid-item {
-      background-color: #1e1e1e;
+      background-color: #222;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       text-align: center;
-      color: #fff;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
-
     .grid-item img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-    }
-
-    .slideshow-container {
-      position: relative;
       max-width: 100%;
-      height: auto;
+      border-radius: 10px;
     }
-
+    .slideshow-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+    }
     .slide-image {
-      width: 100%;
-      display: none;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
     }
-
     footer {
-      background-color: #1e1e1e;
-      color: #ccc;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+      background-color: #111;
+      border-top: 2px solid #FFD700;
+      color: gray;
     }
   </style>
 </head>
 <body>
 
-  <header class="header-green">
-    <div class="logo-container">
-      <span class="logo-box">TBA</span>
-      <div>
-        <h1 class="main-title">Taman Baca Anjelas</h1>
-        <p class="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
-      </div>
-    </div>
+  <header>
+    <div class="logo"><span>TBA</span> <strong>Taman Baca Anjelas</strong></div>
+    <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
   </header>
 
-  <div class="marquee-container">
-    <div id="marquee-id" class="marquee-text">DESA BIJELI - NOEMUTI - TTU - NTT - INDONESIA</div>
-    <div id="marquee-en" class="marquee-text" style="display:none;">BIJELI VILLAGE - NOEMUTI - TTU - NTT - INDONESIA</div>
-  </div>
-
-  <nav class="navbar">
+  <nav>
     <a href="#">Beranda</a>
     <a href="#">Tentang Kami</a>
     <a href="#">Kegiatan</a>
     <a href="#">Karya Anak</a>
     <a href="#">Kontak</a>
-    <a href="#"><i class="fas fa-search"></i></a>
-    <a href="mailto:tbmanjelas@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <span class="language-switch-inline">
-      <a href="#" onclick="switchLanguage('id')" class="lang-btn">ID</a> |
-      <a href="#" onclick="switchLanguage('en')" class="lang-btn">EN</a>
-    </span>
+    <a href="#"><span>🔍</span></a>
+    <a href="#"><span>✉️</span></a>
+    <a href="#"><span>🎵</span></a>
+    <a href="#"><span>📘</span></a>
+    <a href="#"><span>▶️</span></a>
+    <div class="language-toggle">
+      <span onclick="setLanguage('id')">ID</span> | <span onclick="setLanguage('en')">EN</span>
+    </div>
   </nav>
 
   <main>
     <div id="content-id">
-      <!-- (bagian konten ID tetap seperti sebelumnya) -->
+      <section class="section">
+        <h2 class="section-title">Tentang Kami</h2>
+        <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Kegiatan Taman Baca Anjelas</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Kegiatan belajar anak-anak di Taman Baca Anjelas">
+            <p><strong>Belajar</strong></p>
+            <p>Kelas membaca dan menulis bersama anak-anak SD</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Anak-anak bermain edukatif di luar ruangan">
+            <p><strong>Bermain</strong></p>
+            <p>Permainan edukatif di halaman baca</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Kegiatan sosial membersihkan lingkungan">
+            <p><strong>Aksi Sosial</strong></p>
+            <p>Bersih desa bersama relawan dan anak-anak</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Galeri Taman Baca Anjelas</h2>
+        <div class="slideshow-container">
+          <img class="slide-image" src="foto1.jpg" alt="Foto 1" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto2.jpg" alt="Foto 2" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto3.jpg" alt="Foto 3" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto4.jpg" alt="Foto 4" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto5.jpg" alt="Foto 5" onerror="this.style.display='none'">
+        </div>
+      </section>
     </div>
 
     <div id="content-en" style="display: none;">
-      <!-- (bagian konten EN tetap seperti sebelumnya) -->
+      <section class="section">
+        <h2 class="section-title">About Us</h2>
+        <p>Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Anjelas Reading Garden Activities</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Learn" alt="Learning activities at Taman Baca Anjelas">
+            <p><strong>Learning</strong></p>
+            <p>Reading class with children from grade 2</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Play" alt="Outdoor educational games">
+            <p><strong>Playing</strong></p>
+            <p>Fun educational games outside the library</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Social+Action" alt="Social action with kids and volunteers">
+            <p><strong>Social Action</strong></p>
+            <p>Community cleanup with children and volunteers</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Anjelas Reading Garden Gallery</h2>
+        <div class="slideshow-container">
+          <img class="slide-image" src="foto1.jpg" alt="Photo 1" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto2.jpg" alt="Photo 2" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto3.jpg" alt="Photo 3" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto4.jpg" alt="Photo 4" onerror="this.style.display='none'">
+          <img class="slide-image" src="foto5.jpg" alt="Photo 5" onerror="this.style.display='none'">
+        </div>
+      </section>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Taman Baca Anjelas</p>
+    © 2025 Taman Baca Anjelas
   </footer>
 
   <script>
-    let slideIndex = 0;
-    const showSlides = () => {
-      const slides = document.querySelectorAll(".slide-image");
-      slides.forEach(slide => slide.style.display = "none");
-      slideIndex++;
-      if (slideIndex > slides.length) slideIndex = 1;
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000);
-    };
-    showSlides();
-
-    function switchLanguage(lang) {
-      const idContent = document.getElementById("content-id");
-      const enContent = document.getElementById("content-en");
-      const marqueeID = document.getElementById("marquee-id");
-      const marqueeEN = document.getElementById("marquee-en");
-
-      if (lang === "id") {
-        idContent.style.display = "block";
-        enContent.style.display = "none";
-        marqueeID.style.display = "inline-block";
-        marqueeEN.style.display = "none";
-      } else {
-        idContent.style.display = "none";
-        enContent.style.display = "block";
-        marqueeID.style.display = "none";
-        marqueeEN.style.display = "inline-block";
-      }
+    function setLanguage(lang) {
+      document.getElementById('content-id').style.display = lang === 'id' ? 'block' : 'none';
+      document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
     }
   </script>
 </body>
