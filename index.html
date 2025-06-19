@@ -2,134 +2,22 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Taman Baca Anjelas</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: white;
-    }
-
-    .header-green {
-      text-align: center;
-      padding: 2rem 1rem;
-      position: relative;
-    }
-
-    .header-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-    }
-
-    .rainbow-text {
-      background: linear-gradient(to right, red, orange, green, blue, indigo, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-    }
-
-    .header-subtitle {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .language-switch a {
-      margin: 0 0.5rem;
-      font-weight: bold;
-      color: #ffd700;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .language-switch a:hover {
-      color: #00ffff;
-    }
-
-    .navbar {
-      background-color: #2b2b2b;
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
-      gap: 1.5rem;
-      font-size: 1.2rem;
-    }
-
-    .navbar a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: #00ffff;
-    }
-
-    .butterfly {
-      position: absolute;
-      width: 60px;
-      animation: fly 8s ease-in-out infinite;
-    }
-
-    .butterfly.right {
-      right: 0;
-      top: 20px;
-    }
-
-    .butterfly.left {
-      left: 0;
-      top: 60px;
-      animation-delay: 2s;
-    }
-
-    @keyframes fly {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(20deg); }
-      100% { transform: translateY(0) rotate(-20deg); }
-    }
-
-    /* Tambahan lainnya seperti section, gallery, dsb */
-    main {
-      padding: 2rem;
-    }
-
-    .section-title {
-      color: #ffd700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <header class="header-green">
-    <div class="header-title">
-      <div class="badge">TBA</div>
-      <div class="rainbow-text">Taman Baca Anjelas</div>
-    </div>
-    <p class="header-subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
+    <h1 class="rainbow-title">
+      <span class="tba-text">TBA</span>
+      <span class="anjelas-text">Taman Baca Anjelas</span>
+    </h1>
+    <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
     <div class="language-switch">
-      <a href="#" onclick="switchLanguage('id')">ID</a> |
-      <a href="#" onclick="switchLanguage('en')">EN</a>
+      <a href="#" onclick="switchLanguage('id')">🇮🇩 ID</a> |
+      <a href="#" onclick="switchLanguage('en')">🇺🇸 EN</a>
     </div>
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="butterfly" class="butterfly left">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="butterfly" class="butterfly right">
   </header>
 
   <nav class="navbar">
@@ -143,9 +31,110 @@
     <a href="https://www.tiktok.com/@tamanbacaanjelas" target="_blank"><i class="fab fa-tiktok"></i></a>
   </nav>
 
+  <!-- Slideshow -->
+  <section class="slideshow">
+    <div class="slides">
+      <img src="slide1.jpg" alt="Foto 1" class="slide active">
+      <img src="slide2.jpg" alt="Foto 2" class="slide">
+      <img src="slide3.jpg" alt="Foto 3" class="slide">
+      <img src="slide4.jpg" alt="Foto 4" class="slide">
+      <img src="slide5.jpg" alt="Foto 5" class="slide">
+    </div>
+  </section>
+
   <main>
-    <!-- Konten dinamis sesuai bahasa -->
-    <!-- ... bisa lanjut dari sini atau saya bantu lanjutkan -->
+    <!-- Bahasa Indonesia -->
+    <div id="content-id">
+      <section class="section">
+        <h2 class="section-title">Tentang Kami</h2>
+        <p>Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Kegiatan</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Belajar" alt="Belajar">
+            <p><strong>Belajar</strong></p>
+            <p>Judul Berita</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Bermain" alt="Bermain">
+            <p><strong>Bermain</strong></p>
+            <p>Judul Berita</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Aksi+Sosial" alt="Aksi Sosial">
+            <p><strong>Aksi Sosial</strong></p>
+            <p>Judul Berita</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bahasa Inggris -->
+    <div id="content-en" style="display: none;">
+      <section class="section">
+        <h2 class="section-title">About Us</h2>
+        <p>Taman Baca Anjelas is a learning space for all ages to grow together through books, discussions, and educational games.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Activities</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Learn" alt="Learn">
+            <p><strong>Learning</strong></p>
+            <p>News Title</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Play" alt="Play">
+            <p><strong>Playing</strong></p>
+            <p>News Title</p>
+          </div>
+          <div class="grid-item">
+            <img src="https://via.placeholder.com/300x200?text=Social+Action" alt="Social Action">
+            <p><strong>Social Action</strong></p>
+            <p>News Title</p>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Taman Baca Anjelas</p>
+  </footer>
+
+  <script>
+    function switchLanguage(lang) {
+      const idContent = document.getElementById("content-id");
+      const enContent = document.getElementById("content-en");
+
+      if (lang === "id") {
+        idContent.style.display = "block";
+        enContent.style.display = "none";
+      } else {
+        idContent.style.display = "none";
+        enContent.style.display = "block";
+      }
+    }
+
+    // Slideshow script
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, i) => {
+        slide.style.display = "none";
+      });
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Ganti setiap 3 detik
+    }
+
+    window.onload = showSlides;
+  </script>
 </body>
 </html>
