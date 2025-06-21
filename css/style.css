@@ -16,12 +16,33 @@ a {
   text-decoration: none;
 }
 
-/* Header & Logo */
+/* Header & Logo dengan Background Gambar */
 header {
+  position: relative;
   text-align: center;
-  padding: 2rem 1rem;
-  background: #1e1e1e;
+  padding: 4rem 1rem;
+  background-image: url('../img/20210222055926_IMG_2027.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 300px;
+  overflow: hidden;
 }
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* efek gelap */
+  z-index: 1;
+}
+
+header > * {
+  position: relative;
+  z-index: 2;
+}
+
 .logo {
   background-color: #ffea00;
   color: #000;
