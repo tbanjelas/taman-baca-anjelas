@@ -20,6 +20,7 @@ a {
 header {
   text-align: center;
   padding: 2rem 1rem;
+  padding-bottom: 1rem; /* ✅ Ditambahkan untuk jarak nav */
   background: url('../img/20210222055926_IMG_2027.JPG') center/cover no-repeat;
   color: #fff;
 }
@@ -27,7 +28,7 @@ header {
   background-color: #ffea00;
   color: #000;
   font-weight: bold;
-  font-size: 2rem; /* Diperbesar */
+  font-size: 2rem;
   padding: 0.6rem 1.2rem;
   display: inline-block;
   border-radius: 6px;
@@ -37,7 +38,7 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  font-size: 2.5rem; /* Diperbesar */
+  font-size: 2.5rem;
 }
 .lang-switch {
   margin-top: 1rem;
