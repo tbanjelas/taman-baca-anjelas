@@ -6,14 +6,7 @@ const translations = {
     "nav-activities": "Kegiatan",
     "nav-creations": "Karya Anak",
     "nav-contact": "Kontak",
-    "about-heading": "Tentang Kami",
-    "about-desc": "Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.",
     "activities-heading": "Kegiatan Taman Baca",
-    "act-learn": "📘 Belajar",
-    "act-play": "🎲 Bermain",
-    "act-social": "🤝 Aksi Sosial",
-    "creations-heading": "Karya Anak",
-    "creations-desc": "Kumpulan karya tulis, gambar, dan kreativitas dari anak-anak peserta TBA.",
     "title": "Taman Baca Anjelas"
   },
   en: {
@@ -23,14 +16,7 @@ const translations = {
     "nav-activities": "Activities",
     "nav-creations": "Creations",
     "nav-contact": "Contact",
-    "about-heading": "About Us",
-    "about-desc": "Taman Baca Anjelas is a learning space for all ages to grow through books, discussion, and educational games.",
     "activities-heading": "TBA Activities",
-    "act-learn": "📘 Learn",
-    "act-play": "🎲 Play",
-    "act-social": "🤝 Social Action",
-    "creations-heading": "Children's Creations",
-    "creations-desc": "A collection of writings, drawings, and creativity by children at TBA.",
     "title": "Anjelas Reading Garden"
   }
 };
@@ -43,10 +29,7 @@ function switchLang() {
   document.querySelectorAll("[data-id]").forEach(el => {
     const key = el.getAttribute("data-id");
     if (translations[currentLang][key]) {
-      const original = translations[currentLang][key];
-      const emoji = original.match(/^[^\w\s]?/g)?.[0] || "";
-      const cleanText = original.replace(/^[^\w\s]?/, "").trim();
-      el.textContent = emoji + " " + cleanText;
+      el.textContent = translations[currentLang][key];
     }
   });
 
@@ -62,46 +45,19 @@ function switchLang() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Modal untuk "Lihat Berita"
-  document.querySelectorAll(".berita-link").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const modalId = link.getAttribute("data-modal");
-      const modal = document.getElementById(modalId);
-      if (modal) modal.style.display = "block";
-    });
-  });
-
-  // Tombol tutup modal
-  document.querySelectorAll(".close").forEach(closeBtn => {
-    closeBtn.addEventListener("click", () => {
-      const modal = closeBtn.closest(".modal");
-      if (modal) modal.style.display = "none";
-    });
-  });
-
-  // Klik luar modal = tutup
-  document.querySelectorAll(".modal").forEach(modal => {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-  });
-
-  // Modal gambar kegiatan
+  // Modal klik gambar galeri
   document.querySelectorAll(".kegiatan-item img").forEach(img => {
     img.addEventListener("click", () => {
       openImageModal(img.src);
     });
   });
-});
 
-// Fungsi modal gambar kegiatan
-function openImageModal(src) {
-  let modal = document.getElementById("modal-img-view");
-  if (!modal) {
-    modal = document.createElement("div");
+  // Modal container setup sekali saja
+  if (!document.getElementById("modal-img-view")) {
+    const modal = document.createElement("div");
     modal.id = "modal-img-view";
     modal.className = "modal";
+    modal.style.display = "none";
     modal.innerHTML = `
       <span class="close" onclick="document.getElementById('modal-img-view').style.display='none'">&times;</span>
       <div class="modal-content">
@@ -109,8 +65,20 @@ function openImageModal(src) {
       </div>
     `;
     document.body.appendChild(modal);
-  }
 
-  document.getElementById("modal-img-large").src = src;
-  modal.style.display = "block";
+    // Tutup saat klik di luar konten
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+});
+
+// Fungsi buka modal gambar
+function openImageModal(src) {
+  const modal = document.getElementById("modal-img-view");
+  const img = document.getElementById("modal-img-large");
+  if (modal && img) {
+    img.src = src;
+    modal.style.display = "block";
+  }
 }
