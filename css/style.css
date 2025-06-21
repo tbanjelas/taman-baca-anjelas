@@ -103,6 +103,48 @@ p {
   text-align: center;
 }
 
+/* Foto Pendiri */
+.founder-photo {
+  display: block;
+  max-width: 200px;
+  border-radius: 8px;
+  margin: 1rem auto;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+.founder-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Gambar */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+  margin: 5% auto;
+  display: block;
+  max-width: 90%;
+  border-radius: 12px;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Kontak */
 .contact-form {
   display: flex;
@@ -138,44 +180,4 @@ footer {
   text-align: center;
   padding: 1rem;
   color: #888;
-}
-
-/* Pendiri Modal */
-.founder-photo {
-  max-width: 200px;
-  margin-top: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.founder-photo:hover {
-  transform: scale(1.05);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-  border-radius: 12px;
-}
-.close {
-  position: absolute;
-  top: 30px;
-  right: 50px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
 }
