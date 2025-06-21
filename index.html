@@ -9,15 +9,18 @@
 <body>
   <header>
     <div class="logo">TBA</div>
-    <h1><span class="gradient">Taman Baca Anjelas</span></h1>
-    <p>Belajar, Bermain, dan Tumbuh Bersama.</p>
-    <div class="lang-switch">ID | EN</div>
+    <h1><span class="gradient lang-id">Taman Baca Anjelas</span><span class="gradient lang-en" style="display:none;">Anjelas Reading Garden</span></h1>
+    <p><span class="lang-id">Belajar, Bermain, dan Tumbuh Bersama.</span><span class="lang-en" style="display:none;">Learn, Play, and Grow Together.</span></p>
+    <div class="lang-switch">
+      <button onclick="switchLang('id')">ID</button> |
+      <button onclick="switchLang('en')">EN</button>
+    </div>
   </header>
 
   <nav>
     <ul>
       <li><a href="#">Beranda</a></li>
-      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#tentang">Tentang</a></li>
       <li><a href="#kegiatan">Kegiatan</a></li>
       <li><a href="#karya">Karya Anak</a></li>
       <li><a href="#kontak">Kontak</a></li>
@@ -26,40 +29,23 @@
 
   <main>
     <section id="tentang">
-      <h2>Tentang Kami</h2>
-      <p>
-        Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin
-        tumbuh bersama lewat buku, diskusi, dan permainan edukatif.
-      </p>
+      <h2><span class="lang-id">Tentang Kami</span><span class="lang-en" style="display:none;">About Us</span></h2>
+      <p><span class="lang-id">Taman Baca Anjelas adalah ruang belajar komunitas.</span><span class="lang-en" style="display:none;">Anjelas Reading Garden is a community learning space.</span></p>
     </section>
-
     <section id="kegiatan">
-      <h2>Kegiatan Taman Baca Anjelas</h2>
+      <h2><span class="lang-id">Kegiatan</span><span class="lang-en" style="display:none;">Activities</span></h2>
       <div class="kegiatan-list">
         <div class="kegiatan-item">📘 Belajar</div>
         <div class="kegiatan-item">🎲 Bermain</div>
         <div class="kegiatan-item">🤝 Aksi Sosial</div>
       </div>
     </section>
-
-    <section id="karya">
-      <h2>Karya Anak</h2>
-      <p>Kumpulan cerita, puisi, dan gambar dari anak-anak sekitar Anjelas.</p>
-    </section>
-
-    <section id="kontak">
-      <h2>Kontak</h2>
-      <form>
-        <label>Nama<br /><input type="text" /></label><br /><br />
-        <label>Email<br /><input type="email" /></label><br /><br />
-        <label>Pesan<br /><textarea rows="5"></textarea></label><br /><br />
-        <button type="submit">Kirim</button>
-      </form>
-    </section>
   </main>
 
   <footer>
     <p>© 2025 Taman Baca Anjelas</p>
   </footer>
+
+  <script src="js/lang-switch.js"></script>
 </body>
 </html>
