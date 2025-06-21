@@ -1,1 +1,23 @@
-Dummy content for base.njk
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title or "Taman Baca Anjelas" }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/script.js" defer></script>
+    <link rel="icon" href="/public/logo.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="logo">TBA</div>
+        <div class="lang-switch">ID | EN</div>
+      </div>
+      <h1><span class="gradient">{{ title }}</span></h1>
+      {% if subtitle %}<p class="subtext">{{ subtitle }}</p>{% endif %}
+    </header>
+    <main>{{ content | safe }}</main>
+    <footer><p>© 2025 Taman Baca Anjelas</p></footer>
+  </body>
+</html>

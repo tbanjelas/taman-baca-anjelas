@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Admin</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </head>
-  <body>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin TBA</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .editable {
+      border: 1px dashed #555;
+      padding: 4px;
+      cursor: text;
+    }
+    .admin-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .admin-controls button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #ffea00;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo editable" contenteditable="true" id="logoText">TBA</div>
+    <h1><span class="gradient editable" contenteditable="true" id="mainTitle">Taman Baca Anjelas</span></h1>
+    <p class="subtext editable" contenteditable="true" id="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
+  </header>
+
+  <main>
+    <section id="tentang">
+      <h2 class="editable" contenteditable="true" id="about-heading">Tentang Kami</h2>
+      <p class="editable" contenteditable="true" id="about-desc">
+        Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.
+      </p>
+    </section>
+  </main>
+
+  <div class="admin-controls">
+    <div>Status: <span id="status">Belum disimpan</span></div>
+    <button onclick="saveChanges()">💾 Simpan</button>
+    <button onclick="resetChanges()">🔄 Reset</button>
+  </div>
+
+  <script>
+    // Simpan ke localStorage
+    function saveChanges() {
+      const ids = ['logoText', 'mainTitle', 'subtitle', 'about-heading', 'about-desc'];
+      ids.forEach(id => {
+        localStorage.setItem(id, document.getElementById(id).innerText);
+      });
+      document.getElementById("status").innerText = "Disimpan ✔️";
+    }
+
+    // Muat dari localStorage
+    function loadChanges() {
+      const ids = ['logoText', 'mainTitle', 'subtitle', 'about-heading', 'about-desc'];
+      ids.forEach(id => {
+        const saved = localStorage.getItem(id);
+        if (saved) document.getElementById(id).innerText = saved;
+      });
+    }
+
+    // Reset localStorage
+    function resetChanges() {
+      const ids = ['logoText', 'mainTitle', 'subtitle', 'about-heading', 'about-desc'];
+      ids.forEach(id => localStorage.removeItem(id));
+      location.reload();
+    }
+
+    window.onload = loadChanges;
+  </script>
+</body>
 </html>
