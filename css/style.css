@@ -20,7 +20,7 @@ a {
 header {
   text-align: center;
   padding: 2rem 1rem;
-  padding-bottom: 1rem; /* ✅ Ditambahkan untuk jarak nav */
+  padding-bottom: 1rem; /* agar nav tidak mepet */
   background: url('../img/20210222055926_IMG_2027.JPG') center/cover no-repeat;
   color: #fff;
 }
@@ -33,18 +33,24 @@ header {
   display: inline-block;
   border-radius: 6px;
 }
-.gradient {
-  background: linear-gradient(90deg, orange, green, blue, purple, pink);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  font-size: 2.5rem;
-}
 .lang-switch {
   margin-top: 1rem;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+/* Tambahan untuk slogan */
+.slogan {
+  margin-top: 1rem;
+}
+.slogan .gradient {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.slogan .subtext {
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
 /* Navigation */
