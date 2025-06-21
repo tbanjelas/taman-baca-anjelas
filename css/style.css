@@ -170,3 +170,31 @@ footer {
   width: 100%;
   color: #888;
 }
+/* ===== Gambar Background untuk Header ===== */
+header {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-image: url('../img/20210222055926_IMG_2027.JPG'); /* Pastikan nama file dan path benar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* ===== Overlay gelap agar teks tetap terbaca ===== */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% hitam transparan */
+  z-index: 1;
+}
+
+/* ===== Pastikan semua elemen di header muncul di atas overlay ===== */
+header > * {
+  position: relative;
+  z-index: 2;
+}
