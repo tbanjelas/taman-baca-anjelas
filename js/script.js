@@ -47,15 +47,50 @@ function switchLang() {
     }
   });
 
-  // Ganti teks besar (judul utama)
-  const h1 = document.querySelector("header h1 span.gradient");
-  if (h1) {
-    h1.textContent = translations[currentLang]["title"];
-  }
-
-  // Ganti label tombol bahasa
   const langSwitch = document.querySelector(".lang-switch");
   if (langSwitch) {
     langSwitch.textContent = currentLang === "id" ? "ID | EN" : "EN | ID";
   }
+
+  const h1 = document.querySelector(".gradient");
+  if (h1) {
+    h1.textContent = translations[currentLang]["title"];
+  }
 }
+
+// Modal logic
+document.addEventListener("DOMContentLoaded", () => {
+  const modals = document.querySelectorAll(".modal");
+  const closeButtons = document.querySelectorAll(".close");
+  const kegiatanImages = document.querySelectorAll(".kegiatan-content img");
+  const kegiatanLinks = document.querySelectorAll(".kegiatan-content .berita-link");
+
+  // Tampilkan modal saat gambar diklik
+  kegiatanImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      modals[index].style.display = "block";
+    });
+  });
+
+  // Tutup modal
+  closeButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      modals[index].style.display = "none";
+    });
+  });
+
+  // Tutup modal jika klik di luar gambar
+  modals.forEach(modal => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+
+  // Optional: buka link berita di tab baru
+  kegiatanLinks.forEach(link => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+});
