@@ -102,22 +102,30 @@ p {
   flex: 1;
   text-align: center;
 }
-
-/* Foto Pendiri */
-.founder-photo {
-  display: block;
-  max-width: 200px;
-  border-radius: 8px;
-  margin: 1rem auto;
+.kegiatan-item img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.kegiatan-item h3 {
+  color: #ffea00;
+  margin-bottom: 0.3rem;
+}
+.kegiatan-item a.berita-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ffea00;
+  font-weight: bold;
+  text-decoration: underline;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
 }
-.founder-photo:hover {
-  transform: scale(1.05);
+.kegiatan-item a.berita-link:hover {
+  color: #fff;
 }
 
-/* Modal Gambar */
+/* Modal Gambar / Berita */
 .modal {
   display: none;
   position: fixed;
@@ -135,6 +143,11 @@ p {
   max-width: 90%;
   border-radius: 12px;
 }
+.modal-text {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
 .close {
   position: absolute;
   top: 30px;
@@ -143,6 +156,20 @@ p {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Foto Pendiri */
+.founder-photo {
+  display: block;
+  max-width: 200px;
+  border-radius: 8px;
+  margin: 1rem auto;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+.founder-photo:hover {
+  transform: scale(1.05);
 }
 
 /* Kontak */
@@ -190,12 +217,10 @@ footer {
   flex-wrap: wrap;
   margin-top: 1rem;
 }
-
 .sahabat-item {
   text-align: center;
   max-width: 160px;
 }
-
 .sahabat-item img {
   width: 140px;
   height: 140px;
@@ -205,11 +230,9 @@ footer {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
 }
-
 .sahabat-item img:hover {
   transform: scale(1.05);
 }
-
 .sahabat-item p {
   margin-top: 0.5rem;
   color: #fff;
