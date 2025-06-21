@@ -93,33 +93,50 @@ p {
   font-size: 1.1rem;
 }
 
-/* Kegiatan */
-.kegiatan-list {
+/* Kegiatan (Galeri Baru) */
+.kegiatan-gallery {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
+
 .kegiatan-item {
-  background-color: #333;
-  padding: 1rem;
-  border-radius: 8px;
-  flex: 1;
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
   text-align: center;
 }
-.kegiatan-item h3 {
-  color: #ffea00;
-  margin-bottom: 0.3rem;
+
+.kegiatan-item:hover {
+  transform: scale(1.02);
 }
-.kegiatan-item a.berita-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #ffea00;
-  font-weight: bold;
-  text-decoration: underline;
+
+.kegiatan-item img {
+  width: 100%;
+  height: auto;
+  display: block;
   cursor: pointer;
 }
-.kegiatan-item a.berita-link:hover {
+
+.kegiatan-item h3 {
+  margin: 0;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  background-color: #111;
+}
+
+.kegiatan-item h3 a {
+  color: #ffea00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.kegiatan-item h3 a:hover {
   color: #fff;
 }
 
