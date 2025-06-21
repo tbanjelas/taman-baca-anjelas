@@ -16,51 +16,34 @@ a {
   text-decoration: none;
 }
 
-/* Header dengan Background Gambar */
+/* Header & Logo */
 header {
   text-align: center;
-  padding: 4rem 1rem;
-  background: url('../img/20210222055926_IMG_2027.JPG') no-repeat center center;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-  color: white;
-}
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  padding: 2rem 1rem;
+  background: url('../img/20210222055926_IMG_2027.JPG') center/cover no-repeat;
+  color: #fff;
 }
 .logo {
   background-color: #ffea00;
   color: #000;
   font-weight: bold;
-  font-size: 2.2rem;
-  padding: 0.5rem 1rem;
+  font-size: 2rem; /* Diperbesar */
+  padding: 0.6rem 1.2rem;
   display: inline-block;
   border-radius: 6px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 .gradient {
   background: linear-gradient(90deg, orange, green, blue, purple, pink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-size: 2.5rem; /* Diperbesar */
 }
 .lang-switch {
   margin-top: 1rem;
   cursor: pointer;
   font-weight: bold;
-  color: #fff;
-}
-.subtext {
-  font-size: 1.4rem;
-  margin-top: 0.5rem;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
 }
 
 /* Navigation */
@@ -73,7 +56,6 @@ nav ul {
   list-style: none;
   gap: 1.5rem;
   padding: 1rem;
-  flex-wrap: wrap;
 }
 nav li a {
   color: #fff;
@@ -91,13 +73,14 @@ main {
   margin: auto;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #ffe600;
   margin-bottom: 0.5rem;
 }
 p {
   margin-bottom: 1.5rem;
   color: #ddd;
+  font-size: 1.1rem;
 }
 
 /* Kegiatan */
