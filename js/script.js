@@ -59,7 +59,7 @@ function switchLang() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Tampilkan modal saat klik tautan "Lihat Berita"
+  // Modal untuk "Lihat Berita"
   document.querySelectorAll(".berita-link").forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Tutup modal saat klik tombol close
+  // Tombol tutup modal
   document.querySelectorAll(".close").forEach(closeBtn => {
     closeBtn.addEventListener("click", () => {
       const modal = closeBtn.closest(".modal");
@@ -77,10 +77,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Tutup modal saat klik di luar konten modal
+  // Klik luar modal = tutup
   document.querySelectorAll(".modal").forEach(modal => {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.style.display = "none";
     });
   });
+
+  // Modal gambar kegiatan
+  document.querySelectorAll(".kegiatan-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      openImageModal(img.src);
+    });
+  });
 });
+
+// Fungsi modal gambar kegiatan
+function openImageModal(src) {
+  // Cek apakah modal sudah ada
+  let modal = document.getElementById("modal-img-view");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "modal-img-view";
+    modal.className = "modal";
+    modal.innerHTML = `
+      <span class="close" onclick="document.getElementById('modal-img-view').style.display='none'">&times;</span>
+      <div class="modal-content">
+        <img id="modal-img-large" src="" alt="Preview" />
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  document.getElementById("modal-img-large").src = src;
+  modal.style.display = "block";
+}
