@@ -16,53 +16,51 @@ a {
   text-decoration: none;
 }
 
-/* Header & Logo dengan Background Gambar */
+/* Header dengan Background Gambar */
 header {
-  position: relative;
   text-align: center;
   padding: 4rem 1rem;
-  background-image: url('../img/20210222055926_IMG_2027.JPG');
+  background: url('../img/20210222055926_IMG_2027.JPG') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
   color: white;
-  min-height: 300px;
-  overflow: hidden;
 }
-
 header::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* efek gelap */
-  z-index: 1;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
-
-header > * {
-  position: relative;
-  z-index: 2;
-}
-
 .logo {
   background-color: #ffea00;
   color: #000;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   padding: 0.5rem 1rem;
   display: inline-block;
   border-radius: 6px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 .gradient {
   background: linear-gradient(90deg, orange, green, blue, purple, pink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 .lang-switch {
   margin-top: 1rem;
   cursor: pointer;
   font-weight: bold;
+  color: #fff;
+}
+.subtext {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Navigation */
@@ -75,6 +73,7 @@ nav ul {
   list-style: none;
   gap: 1.5rem;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 nav li a {
   color: #fff;
@@ -169,32 +168,4 @@ footer {
   bottom: 0;
   width: 100%;
   color: #888;
-}
-/* ===== Gambar Background untuk Header ===== */
-header {
-  position: relative;
-  text-align: center;
-  padding: 4rem 1rem;
-  background-image: url('../img/20210222055926_IMG_2027.JPG'); /* Pastikan nama file dan path benar */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  min-height: 300px;
-  overflow: hidden;
-}
-
-/* ===== Overlay gelap agar teks tetap terbaca ===== */
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 50% hitam transparan */
-  z-index: 1;
-}
-
-/* ===== Pastikan semua elemen di header muncul di atas overlay ===== */
-header > * {
-  position: relative;
-  z-index: 2;
 }
