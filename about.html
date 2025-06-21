@@ -33,9 +33,7 @@
     <section>
       <h2 data-id="founder-heading">Pendiri</h2>
       <p data-id="founder-desc">TBA didirikan oleh Remy Taimenas — seorang pegiat pendidikan komunitas dengan semangat membaca dan menginspirasi anak-anak.</p>
-      <div class="founder-image">
-        <img src="public/pendiri.png" alt="Foto Remy Taimenas" class="founder-photo" onclick="openModal(this)" />
-      </div>
+      <img src="public/pendiri.png" alt="Remy Taimenas" class="founder-photo" onclick="openModal(this.src)" />
     </section>
 
     <section>
@@ -43,6 +41,12 @@
       <p data-id="support-desc">Kami mendapat dukungan dari relawan, orang tua, dan sahabat literasi yang membantu menghidupkan berbagai kegiatan.</p>
     </section>
   </main>
+
+  <!-- Modal untuk gambar pendiri -->
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
   <footer>
     <p>© 2025 Taman Baca Anjelas</p>
