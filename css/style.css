@@ -1,65 +1,55 @@
-/* Global Styles */
+/* Reset dasar untuk menghindari perbedaan antar browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-h1, h2, p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Header */
 .header-green {
   background-color: #4CAF50;
   color: white;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
 }
 
 .logo-container {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .logo-box {
   background-color: white;
   color: #4CAF50;
-  font-size: 30px;
-  font-weight: bold;
   padding: 10px;
-  border-radius: 5px;
+  font-size: 1.5rem;
   margin-right: 15px;
+  border-radius: 5px;
 }
 
 .main-title {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 
-/* Marquee Text */
 .marquee-container {
-  background-color: #333;
-  color: white;
-  padding: 5px;
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .marquee-text {
   display: inline-block;
-  padding-left: 100%;
+  padding: 5px 20px;
+  white-space: nowrap;
   animation: marquee 10s linear infinite;
 }
 
@@ -68,157 +58,62 @@ h1, h2, p {
   100% { transform: translateX(-100%); }
 }
 
-/* Navbar */
 .navbar {
+  background-color: #333;
+  color: white;
   display: flex;
-  justify-content: flex-start; /* Mulai dari kiri */
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  background-color: #2b2d2f;
   padding: 10px 20px;
-  width: 100%; /* Pastikan navbar mengambil lebar penuh */
-  box-sizing: border-box; /* Menjamin padding tidak mempengaruhi lebar */
 }
 
 .navbar a {
-  text-decoration: none;
   color: white;
-  padding: 10px;
-  font-size: 16px;
-  display: inline-flex;
-  align-items: center;
-  margin: 5px;
+  text-decoration: none;
+  margin: 0 15px;
 }
 
 .navbar a:hover {
-  background-color: #5f6368;
-  border-radius: 5px;
+  text-decoration: underline;
 }
 
-.navbar a i {
-  margin-right: 5px;
-}
-
-.navbar a i.fas, .navbar a i.fab {
-  font-size: 18px;
-}
-
-.navbar a i.fas.fa-envelope, .navbar a i.fab.fa-tiktok {
-  font-size: 20px;
-  margin-right: 8px;
-}
-
-/* Language Switch */
-.language-switch-inline {
-  display: inline-block;
-}
-
-.lang-btn {
+.language-switch-inline a {
   color: white;
-  padding: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  border: 1px solid white;
-  border-radius: 5px;
-  margin-left: 5px;
+  font-weight: normal;
 }
 
-.lang-btn:hover {
-  background-color: #5f6368;
-}
-
-.lang-btn.active {
-  background-color: #4CAF50;
-}
-
-/* Main Content */
-main {
-  padding: 20px;
-}
-
-.section {
-  margin-bottom: 40px;
-}
-
-.section-title {
-  font-size: 24px;
-  margin-bottom: 15px;
+.language-switch-inline a.active {
+  font-weight: bold;
   color: #4CAF50;
+}
+
+.main {
+  padding: 20px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .grid-item {
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .grid-item img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  max-width: 300px;
+  margin-bottom: 10px;
 }
 
-.grid-item p {
-  margin-top: 10px;
-}
-
-.slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin-top: 20px;
-}
-
-.slide-image {
-  width: 100%;
-  height: auto;
-  display: none;
-  border-radius: 5px;
-}
-
-/* Footer */
 footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 footer p {
-  font-size: 14px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start; /* Navbar akan ditampilkan vertikal */
-  }
-
-  .navbar a {
-    margin: 5px 0;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Additional Adjustments */
-.lang-switch {
-  display: inline-block;
-}
-
-.lang-switch[data-id] {
-  display: block;
-}
-
-.lang-switch[data-en] {
-  display: none;
+  font-size: 1rem;
 }
