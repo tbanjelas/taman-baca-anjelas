@@ -43,8 +43,8 @@
                alt="Belajar"
                style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;">
-            <a href="#" style="text-decoration: none; color: #333;">Trump Sebut AS Akan Bangkrut Jika...</a>
+          <h3 style="margin-top: 10px;" data-id="act-learn">
+            📘 <a href="#" class="berita-link" data-modal="modal-belajar" style="text-decoration: none; color: #333;">Trump Sebut AS Akan Bangkrut Jika...</a>
           </h3>
         </div>
 
@@ -54,8 +54,8 @@
                alt="Bermain"
                style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;">
-            <a href="#" style="text-decoration: none; color: #333;">Kenapa Anak-anak Harus Bermain...</a>
+          <h3 style="margin-top: 10px;" data-id="act-play">
+            🎲 <a href="#" class="berita-link" data-modal="modal-bermain" style="text-decoration: none; color: #333;">Kenapa Anak-anak Harus Bermain...</a>
           </h3>
         </div>
 
@@ -65,15 +65,15 @@
                alt="Aksi Sosial"
                style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;">
-            <a href="#" style="text-decoration: none; color: #333;">Aksi Sosial TBA Bikin Haru Warga</a>
+          <h3 style="margin-top: 10px;" data-id="act-social">
+            🤝 <a href="#" class="berita-link" data-modal="modal-sosial" style="text-decoration: none; color: #333;">Aksi Sosial TBA Bikin Haru Warga</a>
           </h3>
         </div>
 
       </div>
     </section>
 
-    <!-- Modal Foto -->
+    <!-- Modal Foto Manual -->
     <div id="modal" class="modal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
       <span onclick="closeModal()"
             style="position:absolute; top:20px; right:30px; color:white; font-size:30px; font-weight:bold; cursor:pointer;">&times;</span>
@@ -83,23 +83,30 @@
       </div>
     </div>
 
-    <script>
-      function openModal(src) {
-        document.getElementById("modal-img").src = src;
-        document.getElementById("modal").style.display = "block";
-      }
+    <!-- Modal Berita -->
+    <div id="modal-belajar" class="modal">
+      <span class="close" data-close="modal-belajar">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Kegiatan Belajar Bersama Anak-anak</h3>
+        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/belajar.JPG?raw=true" alt="Belajar" />
+      </div>
+    </div>
 
-      function closeModal() {
-        document.getElementById("modal").style.display = "none";
-      }
+    <div id="modal-bermain" class="modal">
+      <span class="close" data-close="modal-bermain">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Keseruan Bermain Edukatif di TBA</h3>
+        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/bermain.JPG?raw=true" alt="Bermain" />
+      </div>
+    </div>
 
-      window.onclick = function(event) {
-        const modal = document.getElementById("modal");
-        if (event.target === modal) {
-          closeModal();
-        }
-      };
-    </script>
+    <div id="modal-sosial" class="modal">
+      <span class="close" data-close="modal-sosial">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Aksi Sosial: Berbagi Buku dan Semangat</h3>
+        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/aksisosial.JPG?raw=true" alt="Aksi Sosial" />
+      </div>
+    </div>
   </main>
 
   <footer>
