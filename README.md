@@ -1,2 +1,14 @@
 # Taman Baca Anjelas
-Website resmi Taman Baca Anjelas – Belajar, Bermain, dan Tumbuh Bersama.
+
+Website edukatif dan inklusif untuk belajar dan bermain.
+
+## Struktur
+- HTML di akar
+- CSS di /css
+- JS di /js
+- robots.txt di /public
+
+## Fitur
+- CSP ringan
+- Honeypot
+- Halaman admin disembunyikan
