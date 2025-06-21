@@ -76,6 +76,8 @@ h1, h2, p {
   flex-wrap: wrap;
   background-color: #2b2d2f;
   padding: 10px 20px;
+  width: 100%; /* Pastikan navbar mengambil lebar penuh */
+  box-sizing: border-box; /* Menjamin padding tidak mempengaruhi lebar */
 }
 
 .navbar a {
