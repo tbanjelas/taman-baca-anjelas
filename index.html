@@ -7,6 +7,66 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js" defer></script>
   <link rel="icon" href="public/logo.png" type="image/png" />
+  <style>
+    .kegiatan-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .kegiatan-card {
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #fff;
+      transition: transform 0.3s;
+    }
+    .kegiatan-card img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+    .kegiatan-card h3 {
+      margin: 0;
+      padding: 10px;
+      background: #f5f5f5;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .kegiatan-card h3 a {
+      text-decoration: none;
+      color: #333;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      display: block;
+      max-width: 90%;
+      margin: 80px auto;
+    }
+    .modal-content img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,68 +81,44 @@
 
   <nav>
     <ul>
-      <li><a href="index.html" data-id="nav-home">Beranda</a></li>
-      <li><a href="about.html" data-id="nav-about">Tentang Kami</a></li>
-      <li><a href="#kegiatan" data-id="nav-activities">Kegiatan</a></li>
-      <li><a href="contact.html" data-id="nav-contact">Kontak</a></li>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="contact.html">Kontak</a></li>
       <li><input type="text" placeholder="Cari..." class="search-input" /></li>
       <li><a href="mailto:info@tbanjelas.my.id" title="Email">📧</a></li>
       <li><a href="https://www.tiktok.com/@tbanjelas" target="_blank" title="TikTok">🎵</a></li>
-      <li><div class="lang-switch" data-id="lang-toggle" onclick="switchLang()">ID | EN</div></li>
+      <li><div class="lang-switch" onclick="switchLang()">ID | EN</div></li>
     </ul>
   </nav>
 
   <main>
     <section id="kegiatan">
-      <h2 data-id="activities-heading">Kegiatan Taman Baca</h2>
-      <div class="kegiatan-list">
-        <!-- Belajar -->
-        <div class="kegiatan-item" data-id="act-learn">
-          📘 Belajar
-          <br />
-          <a href="#" class="berita-link" data-modal="modal-belajar">Lihat Berita</a>
+      <h2>Kegiatan Taman Baca</h2>
+      <div class="kegiatan-gallery">
+
+        <div class="kegiatan-card">
+          <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/belajar.JPG?raw=true" alt="Belajar" onclick="openModal(this.src)" />
+          <h3><a href="#">Trump Sebut AS Akan Bangkrut Jika...</a></h3>
         </div>
 
-        <!-- Bermain -->
-        <div class="kegiatan-item" data-id="act-play">
-          🎲 Bermain
-          <br />
-          <a href="#" class="berita-link" data-modal="modal-bermain">Lihat Berita</a>
+        <div class="kegiatan-card">
+          <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/bermain.JPG?raw=true" alt="Bermain" onclick="openModal(this.src)" />
+          <h3><a href="#">Kenapa Anak-anak Harus Bermain...</a></h3>
         </div>
 
-        <!-- Aksi Sosial -->
-        <div class="kegiatan-item" data-id="act-social">
-          🤝 Aksi Sosial
-          <br />
-          <a href="#" class="berita-link" data-modal="modal-sosial">Lihat Berita</a>
+        <div class="kegiatan-card">
+          <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/aksisosial.JPG?raw=true" alt="Aksi Sosial" onclick="openModal(this.src)" />
+          <h3><a href="#">Aksi Sosial TBA Bikin Haru Warga</a></h3>
         </div>
+
       </div>
     </section>
 
-    <!-- Modal Belajar -->
-    <div id="modal-belajar" class="modal">
-      <span class="close" data-close="modal-belajar">&times;</span>
+    <div id="modal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-content">
-        <h3 class="modal-title">Kegiatan Belajar Bersama Anak-anak</h3>
-        <img src="https://raw.githubusercontent.com/tbanjelas/taman-baca-anjelas/477aae9d046043056e8ae304a4905746b69ae113/img/20201226043726_IMG_0884.jpg" alt="Foto Belajar" />
-      </div>
-    </div>
-
-    <!-- Modal Bermain -->
-    <div id="modal-bermain" class="modal">
-      <span class="close" data-close="modal-bermain">&times;</span>
-      <div class="modal-content">
-        <h3 class="modal-title">Keseruan Bermain Edukatif di TBA</h3>
-        <img src="https://raw.githubusercontent.com/tbanjelas/taman-baca-anjelas/477aae9d046043056e8ae304a4905746b69ae113/img/20210221052023_IMG_1843.jpg" alt="Foto Bermain" />
-      </div>
-    </div>
-
-    <!-- Modal Aksi Sosial -->
-    <div id="modal-sosial" class="modal">
-      <span class="close" data-close="modal-sosial">&times;</span>
-      <div class="modal-content">
-        <h3 class="modal-title">Aksi Sosial: Berbagi Buku dan Semangat</h3>
-        <img src="https://raw.githubusercontent.com/tbanjelas/taman-baca-anjelas/477aae9d046043056e8ae304a4905746b69ae113/img/20201226043403_IMG_0871.jpg" alt="Foto Aksi Sosial" />
+        <img id="modal-img" src="" alt="Preview" />
       </div>
     </div>
   </main>
@@ -90,5 +126,19 @@
   <footer>
     <p>© 2025 Taman Baca Anjelas</p>
   </footer>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) closeModal();
+    }
+  </script>
 </body>
 </html>
