@@ -20,7 +20,6 @@ a {
 header {
   text-align: center;
   padding: 2rem 1rem;
-  padding-bottom: 1rem; /* agar nav tidak mepet */
   background: url('../img/20210222055926_IMG_2027.JPG') center/cover no-repeat;
   color: #fff;
 }
@@ -33,18 +32,17 @@ header {
   display: inline-block;
   border-radius: 6px;
 }
-
-/* Slogan */
-.slogan {
-  margin-top: 1rem;
-}
-.slogan .gradient {
-  font-size: 2.5rem;
+.gradient {
+  background: linear-gradient(90deg, orange, green, blue, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 2.5rem;
 }
-.slogan .subtext {
-  font-size: 1.2rem;
-  color: #ccc;
+.lang-switch {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* Navigation */
@@ -59,10 +57,6 @@ nav ul {
   padding: 1rem;
   flex-wrap: wrap;
 }
-nav li {
-  display: flex;
-  align-items: center;
-}
 nav li a {
   color: #fff;
   font-weight: 500;
@@ -75,21 +69,6 @@ nav li a:hover {
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
   border: none;
-}
-
-/* Tombol ID | EN */
-.lang-switch {
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  background-color: #444;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-.lang-switch:hover {
-  background-color: #666;
 }
 
 /* Main Section */
@@ -122,21 +101,6 @@ p {
   border-radius: 8px;
   flex: 1;
   text-align: center;
-}
-
-/* Galeri */
-.galeri {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-.galeri img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 8px;
-  object-fit: cover;
-  border: 2px solid #444;
 }
 
 /* Kontak */
@@ -173,8 +137,5 @@ footer {
   background-color: #111;
   text-align: center;
   padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   color: #888;
 }
