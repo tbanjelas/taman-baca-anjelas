@@ -39,6 +39,11 @@ header {
   font-weight: bold;
   font-size: 2.5rem;
 }
+.subtext {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-top: 0.5rem;
+}
 .lang-switch {
   cursor: pointer;
   font-weight: bold;
@@ -102,13 +107,6 @@ p {
   flex: 1;
   text-align: center;
 }
-.kegiatan-item img {
-  width: 100%;
-  max-height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-}
 .kegiatan-item h3 {
   color: #ffea00;
   margin-bottom: 0.3rem;
@@ -139,14 +137,23 @@ p {
 }
 .modal-content {
   margin: 5% auto;
-  display: block;
-  max-width: 90%;
-  border-radius: 12px;
-}
-.modal-text {
-  color: #fff;
-  text-align: center;
+  background-color: #222;
   padding: 1rem;
+  border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.modal-title {
+  color: #ffea00;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 .close {
   position: absolute;
@@ -156,6 +163,19 @@ p {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Responsive Modal */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .close {
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
 }
 
 /* Foto Pendiri */
