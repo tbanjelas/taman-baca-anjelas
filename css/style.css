@@ -1,5 +1,38 @@
-body { font-family: sans-serif; background: #f8f9fa; color: #333; padding: 20px; }
-h1 { color: #2a6ebb; }
-nav a { margin-right: 10px; color: #2a6ebb; text-decoration: none; }
-input, textarea { display: block; margin-top: 10px; width: 300px; padding: 8px; }
-button { background-color: #2a6ebb; color: white; padding: 8px 16px; border: none; margin-top: 10px; }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taman Baca Anjelas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Taman Baca Anjelas</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Selamat Datang!</h2>
+        <p>Website ini menyediakan akses bacaan gratis untuk masyarakat umum. Kami percaya membaca membuka jalan menuju masa depan yang cerah.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Taman Baca Anjelas. Hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
