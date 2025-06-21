@@ -1,56 +1,34 @@
-// === Modal Gambar ===
+// Modal Gambar Preview
 function openModal(src) {
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  modal.style.display = "block";
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  modal.style.display = 'block';
   modalImg.src = src;
 }
 
 function closeModal() {
-  const modal = document.getElementById("modal");
-  modal.style.display = "none";
+  document.getElementById('modal').style.display = 'none';
 }
 
-// === Modal Berita ===
+// Tutup modal berita berdasarkan data-close
+document.querySelectorAll('.close[data-close]').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    const modalId = closeBtn.getAttribute('data-close');
+    document.getElementById(modalId).style.display = 'none';
+  });
+});
+
+// Klik link berita buka modal berita
 document.querySelectorAll('.berita-link').forEach(link => {
-  link.addEventListener('click', function (e) {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const modalId = this.getAttribute('data-modal');
-    const modal = document.getElementById(modalId);
-    if (modal) modal.style.display = 'block';
+    const modalId = link.getAttribute('data-modal');
+    document.getElementById(modalId).style.display = 'block';
   });
 });
 
-document.querySelectorAll('.close').forEach(btn => {
-  btn.addEventListener('click', function () {
-    const targetId = this.getAttribute('data-close');
-    if (targetId) {
-      const modal = document.getElementById(targetId);
-      if (modal) modal.style.display = 'none';
-    } else {
-      closeModal();
-    }
-  });
-});
-
-// === Klik di luar modal untuk tutup ===
-window.addEventListener('click', function (e) {
-  const modals = document.querySelectorAll('.modal');
-  modals.forEach(modal => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
-
-// === Switch Bahasa Placeholder ===
+// Bahasa Toggle
 function switchLang() {
-  const langToggle = document.querySelector('.lang-switch');
-  if (langToggle.textContent.includes('ID')) {
-    langToggle.textContent = 'EN | ID';
-    // Tempat untuk logika switch ke bahasa Inggris
-  } else {
-    langToggle.textContent = 'ID | EN';
-    // Tempat untuk logika switch ke Bahasa Indonesia
-  }
+  const langElem = document.querySelector('[data-id="lang-toggle"]');
+  langElem.textContent = langElem.textContent === 'ID | EN' ? 'EN | ID' : 'ID | EN';
 }
