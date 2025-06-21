@@ -11,12 +11,12 @@ collections:
     files:
       - label: "Beranda"
         name: "home"
-        file: "index.html"
+        file: "index.md"
         fields:
           - { label: "Judul", name: "title", widget: "string" }
           - { label: "Subjudul", name: "subtitle", widget: "string" }
       - label: "Tentang Kami"
         name: "about"
-        file: "about.html"
+        file: "about.md"
         fields:
           - { label: "Isi", name: "body", widget: "text" }
