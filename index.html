@@ -37,11 +37,55 @@
     <section id="kegiatan">
       <h2 data-id="activities-heading">Kegiatan Taman Baca</h2>
       <div class="kegiatan-list">
-        <div class="kegiatan-item" data-id="act-learn">📘 Belajar</div>
-        <div class="kegiatan-item" data-id="act-play">🎲 Bermain</div>
-        <div class="kegiatan-item" data-id="act-social">🤝 Aksi Sosial</div>
+        <!-- Belajar -->
+        <div class="kegiatan-item" data-id="act-learn">
+          📘 Belajar
+          <br />
+          <a href="#" class="berita-link" data-modal="modal-belajar">Lihat Berita</a>
+        </div>
+
+        <!-- Bermain -->
+        <div class="kegiatan-item" data-id="act-play">
+          🎲 Bermain
+          <br />
+          <a href="#" class="berita-link" data-modal="modal-bermain">Lihat Berita</a>
+        </div>
+
+        <!-- Aksi Sosial -->
+        <div class="kegiatan-item" data-id="act-social">
+          🤝 Aksi Sosial
+          <br />
+          <a href="#" class="berita-link" data-modal="modal-sosial">Lihat Berita</a>
+        </div>
       </div>
     </section>
+
+    <!-- Modal Belajar -->
+    <div id="modal-belajar" class="modal">
+      <span class="close" data-close="modal-belajar">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Judul Berita Belajar</h3>
+        <img src="URL_GAMBAR_BELAJAR" alt="Foto Belajar" />
+      </div>
+    </div>
+
+    <!-- Modal Bermain -->
+    <div id="modal-bermain" class="modal">
+      <span class="close" data-close="modal-bermain">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Judul Berita Bermain</h3>
+        <img src="URL_GAMBAR_BERMAIN" alt="Foto Bermain" />
+      </div>
+    </div>
+
+    <!-- Modal Aksi Sosial -->
+    <div id="modal-sosial" class="modal">
+      <span class="close" data-close="modal-sosial">&times;</span>
+      <div class="modal-content">
+        <h3 class="modal-title">Judul Berita Aksi Sosial</h3>
+        <img src="URL_GAMBAR_SOSIAL" alt="Foto Aksi Sosial" />
+      </div>
+    </div>
   </main>
 
   <footer>
