@@ -1,64 +1,62 @@
-/* style.css */
-body {
+/* === Reset & Dasar === */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #eee;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* === Header === */
 .header-green {
-  text-align: center;
-  padding: 1rem;
-  background-color: #1e1e1e;
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px;
 }
 
 .logo-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .logo-box {
-  background-color: yellow;
-  color: black;
+  background-color: white;
+  color: #2e7d32;
   font-weight: bold;
-  padding: 0.2em 0.6em;
-  font-size: 2rem;
-  border-radius: 4px;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .main-title {
-  font-size: 2.5rem;
-  margin: 0;
-  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+  font-size: 28px;
 }
 
 .subtitle {
-  margin: 0;
-  font-size: 1rem;
-  color: #eee;
+  font-size: 16px;
 }
 
+/* === Marquee === */
 .marquee-container {
   overflow: hidden;
+  background: #e8f5e9;
   white-space: nowrap;
-  background-color: #222;
-  color: yellow;
-  padding: 0.5rem 0;
-  border-top: 2px solid #ffcc00;
-  border-bottom: 2px solid #ffcc00;
+  display: flex;
 }
 
 .marquee-text {
-  display: inline-block;
-  transform: translateX(100%);
-  animation: marquee 20s linear infinite;
+  animation: marquee 10s linear infinite;
+  padding: 10px 20px;
   font-weight: bold;
-  font-size: 1rem;
+  color: #388e3c;
 }
 
 @keyframes marquee {
@@ -66,98 +64,94 @@ body {
   100% { transform: translateX(-100%); }
 }
 
+/* === Navbar === */
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  background-color: #292929;
-  padding: 1rem;
+  gap: 15px;
+  background-color: #c8e6c9;
+  padding: 10px 20px;
   align-items: center;
 }
 
 .navbar a {
-  color: #ffffff;
   text-decoration: none;
-  font-size: 1.1rem;
+  color: #1b5e20;
+  font-weight: 500;
 }
 
 .navbar a:hover {
-  color: #ffcc00;
+  text-decoration: underline;
 }
 
-.navbar a i {
-  margin-right: 6px;
-}
-
+/* === Language Switch === */
 .language-switch-inline {
   margin-left: auto;
-}
-
-.language-switch-inline a {
-  text-decoration: none;
   font-weight: bold;
-  padding: 0 0.4rem;
-  color: #ffcc00;
 }
 
-.language-switch-inline a:hover {
-  color: #40e0d0;
+.lang-btn.active {
+  color: #2e7d32;
 }
 
-main {
-  padding: 2rem;
-}
-
+/* === Sections === */
 .section {
-  margin-bottom: 3rem;
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #ffd700;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2e7d32;
 }
 
+/* === Grid (Kegiatan) === */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .grid-item {
-  background-color: #1e1e1e;
-  padding: 1rem;
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  overflow: hidden;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .grid-item img {
   width: 100%;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
+/* === Slideshow === */
 .slideshow-container {
   position: relative;
-  max-width: 100%;
-  height: auto;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .slide-image {
   width: 100%;
   display: none;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  object-fit: cover;
 }
 
+/* === Footer === */
 footer {
-  background-color: #1e1e1e;
-  color: #ccc;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 20px;
+  background-color: #2e7d32;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
-
