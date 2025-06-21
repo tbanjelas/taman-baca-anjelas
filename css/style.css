@@ -1,48 +1,70 @@
-body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
+/* === Reset dasar === */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* === Header === */
 header {
   text-align: center;
-  padding: 2em 1em;
+  padding: 2rem 1rem;
 }
 
 .logo {
   display: inline-block;
-  background: #ffea00;
+  background-color: #ffea00;
   color: #000;
   font-weight: bold;
-  padding: 0.5em 1em;
-  border-radius: 4px;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
 .gradient {
-  background: linear-gradient(to right, orange, green, blue, purple, pink);
+  background: linear-gradient(to right, orange, green, blue, violet, pink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  font-size: 1.5em;
 }
 
+header p {
+  color: #ccc;
+  margin: 0.5rem 0;
+}
+
+.lang-switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* === Navigasi === */
 nav {
-  background: #222;
-  padding: 1em;
-  text-align: center;
+  background-color: #1e1e1e;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 nav a {
@@ -51,21 +73,74 @@ nav a {
   font-weight: bold;
 }
 
-h2 {
+nav a:hover {
+  color: #ffea00;
+}
+
+/* === Main Section === */
+main section {
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+main h2 {
   color: #ffe600;
-  margin-top: 1.5em;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .kegiatan-list {
   display: flex;
-  justify-content: center;
-  gap: 2em;
-  margin-top: 1em;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .kegiatan-item {
-  background: #1e1e1e;
-  padding: 1em;
+  background-color: #222;
+  padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* === Form Kontak === */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  background-color: #222;
+  color: #fff;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #ffea00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff000;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
 }
