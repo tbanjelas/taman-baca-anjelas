@@ -1,4 +1,4 @@
-Dummy co{
+{
   "name": "taman-baca-anjelas",
   "version": "1.0.0",
   "description": "Website Taman Baca Anjelas dengan Eleventy dan Netlify CMS",
@@ -10,4 +10,4 @@ Dummy co{
     "@11ty/eleventy": "^2.0.0"
   }
 }
-ntent for package.json
+
