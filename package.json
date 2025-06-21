@@ -1,1 +1,13 @@
-Dummy content for package.json
+Dummy co{
+  "name": "taman-baca-anjelas",
+  "version": "1.0.0",
+  "description": "Website Taman Baca Anjelas dengan Eleventy dan Netlify CMS",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
+ntent for package.json
