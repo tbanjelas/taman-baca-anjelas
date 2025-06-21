@@ -1,38 +1,54 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taman Baca Anjelas</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Taman Baca Anjelas</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="about.html">Tentang</a></li>
-          <li><a href="contact.html">Kontak</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h2>Selamat Datang!</h2>
-        <p>Website ini menyediakan akses bacaan gratis untuk masyarakat umum. Kami percaya membaca membuka jalan menuju masa depan yang cerah.</p>
-      </div>
-    </section>
-  </main>
+header {
+  background-color: #111;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Taman Baca Anjelas. Hak cipta dilindungi.</p>
-    </div>
-  </footer>
-</body>
-</html>
+.logo {
+  background-color: #ffea00;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1.title {
+  font-size: 2em;
+  background: linear-gradient(to right, orange, green, blue, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section {
+  padding: 2em;
+}
+
+h2 {
+  color: #ffe600;
+}
+
+footer {
+  background-color: #111;
+  padding: 1em;
+  text-align: center;
+  color: #999;
+}
