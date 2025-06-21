@@ -43,7 +43,10 @@ function switchLang() {
   document.querySelectorAll("[data-id]").forEach(el => {
     const key = el.getAttribute("data-id");
     if (translations[currentLang][key]) {
-      el.textContent = translations[currentLang][key];
+      const original = translations[currentLang][key];
+      const emoji = original.match(/^[^\w\s]?/g)?.[0] || "";
+      const cleanText = original.replace(/^[^\w\s]?/, "").trim();
+      el.textContent = emoji + " " + cleanText;
     }
   });
 
@@ -94,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fungsi modal gambar kegiatan
 function openImageModal(src) {
-  // Cek apakah modal sudah ada
   let modal = document.getElementById("modal-img-view");
   if (!modal) {
     modal = document.createElement("div");
