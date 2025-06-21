@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "site"
+    label: "Konten Situs"
+    files:
+      - label: "Beranda"
+        name: "home"
+        file: "index.html"
+        fields:
+          - { label: "Judul", name: "title", widget: "string" }
+          - { label: "Subjudul", name: "subtitle", widget: "string" }
+      - label: "Tentang Kami"
+        name: "about"
+        file: "about.html"
+        fields:
+          - { label: "Isi", name: "body", widget: "text" }
