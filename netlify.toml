@@ -1,9 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = "_site"
+  publish = "/"
+  command = ""
 
 [[redirects]]
   from = "/admin"
   to = "/admin/"
   status = 301
-
