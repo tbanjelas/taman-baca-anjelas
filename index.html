@@ -13,8 +13,8 @@
     <div class="topbar">
       <div class="logo">TBA</div>
       <div class="slogan">
-        <h1 class="gradient">Taman Baca Anjelas</h1>
-        <p class="subtext">Belajar, Bermain, dan Tumbuh Bersama</p>
+        <h1 class="gradient" data-id="title">Taman Baca Anjelas</h1>
+        <p class="subtext" data-id="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
       </div>
     </div>
   </header>
@@ -35,76 +35,72 @@
   <main>
     <section id="kegiatan">
       <h2 data-id="activities-heading">Kegiatan Taman Baca</h2>
-      <div class="kegiatan-gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+      <div class="kegiatan-gallery">
 
         <!-- Belajar -->
-        <div class="kegiatan-item" style="width: 300px; text-align: center;">
+        <div class="kegiatan-item" data-id="act-learn">
           <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/belajar.JPG?raw=true"
                alt="Belajar"
-               style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;" data-id="act-learn">
-            📘 <a href="#" class="berita-link" data-modal="modal-belajar" style="text-decoration: none; color: #333;">Trump Sebut AS Akan Bangkrut Jika...</a>
+          <h3>
+            <a href="#" class="berita-link" data-modal="modal-belajar">Trump Sebut AS Akan Bangkrut Jika...</a>
           </h3>
         </div>
 
         <!-- Bermain -->
-        <div class="kegiatan-item" style="width: 300px; text-align: center;">
+        <div class="kegiatan-item" data-id="act-play">
           <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/bermain.JPG?raw=true"
                alt="Bermain"
-               style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;" data-id="act-play">
-            🎲 <a href="#" class="berita-link" data-modal="modal-bermain" style="text-decoration: none; color: #333;">Kenapa Anak-anak Harus Bermain...</a>
+          <h3>
+            <a href="#" class="berita-link" data-modal="modal-bermain">Kenapa Anak-anak Harus Bermain...</a>
           </h3>
         </div>
 
         <!-- Aksi Sosial -->
-        <div class="kegiatan-item" style="width: 300px; text-align: center;">
+        <div class="kegiatan-item" data-id="act-social">
           <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/aksisosial.JPG?raw=true"
                alt="Aksi Sosial"
-               style="width: 100%; cursor: pointer; border-radius: 10px;"
                onclick="openModal(this.src)" />
-          <h3 style="margin-top: 10px;" data-id="act-social">
-            🤝 <a href="#" class="berita-link" data-modal="modal-sosial" style="text-decoration: none; color: #333;">Aksi Sosial TBA Bikin Haru Warga</a>
+          <h3>
+            <a href="#" class="berita-link" data-modal="modal-sosial">Aksi Sosial TBA Bikin Haru Warga</a>
           </h3>
         </div>
 
       </div>
     </section>
 
-    <!-- Modal Foto Manual -->
-    <div id="modal" class="modal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
-      <span onclick="closeModal()"
-            style="position:absolute; top:20px; right:30px; color:white; font-size:30px; font-weight:bold; cursor:pointer;">&times;</span>
+    <!-- Modal Gambar -->
+    <div id="modal" class="modal">
+      <span onclick="closeModal()" class="close">&times;</span>
       <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
         <img id="modal-img" src="" alt="Preview"
              style="max-width: 90%; max-height: 90%; border-radius: 10px;" />
       </div>
     </div>
 
-    <!-- Modal Berita -->
+    <!-- Modal Berita Placeholder -->
     <div id="modal-belajar" class="modal">
       <span class="close" data-close="modal-belajar">&times;</span>
       <div class="modal-content">
-        <h3 class="modal-title">Kegiatan Belajar Bersama Anak-anak</h3>
-        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/belajar.JPG?raw=true" alt="Belajar" />
+        <h3 class="modal-title">Kegiatan Belajar di TBA</h3>
+        <p>Berisi konten berita atau cerita seputar kegiatan belajar.</p>
       </div>
     </div>
 
     <div id="modal-bermain" class="modal">
       <span class="close" data-close="modal-bermain">&times;</span>
       <div class="modal-content">
-        <h3 class="modal-title">Keseruan Bermain Edukatif di TBA</h3>
-        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/bermain.JPG?raw=true" alt="Bermain" />
+        <h3 class="modal-title">Kegiatan Bermain Edukatif</h3>
+        <p>Berisi konten berita atau cerita tentang kegiatan bermain anak-anak.</p>
       </div>
     </div>
 
     <div id="modal-sosial" class="modal">
       <span class="close" data-close="modal-sosial">&times;</span>
       <div class="modal-content">
-        <h3 class="modal-title">Aksi Sosial: Berbagi Buku dan Semangat</h3>
-        <img src="https://github.com/tbanjelas/taman-baca-anjelas/blob/main/img/aksisosial.JPG?raw=true" alt="Aksi Sosial" />
+        <h3 class="modal-title">Aksi Sosial Bersama Warga</h3>
+        <p>Berita atau cerita tentang kegiatan sosial yang dilakukan TBA bersama masyarakat.</p>
       </div>
     </div>
   </main>
