@@ -1,3 +1,4 @@
+
 body {
   background-color: #111;
   color: #fff;
@@ -5,66 +6,49 @@ body {
   margin: 0;
   padding: 0;
 }
-
 header {
   text-align: center;
   padding: 2em;
 }
-
 .logo {
   background-color: #ffea00;
   color: black;
-  display: inline-block;
   font-weight: bold;
+  display: inline-block;
   padding: 0.5em 1em;
-  margin-bottom: 0.5em;
+  border-radius: 8px;
 }
-
 .gradient {
   background: linear-gradient(to right, orange, green, blue, purple, pink);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2em;
+  color: transparent;
   font-weight: bold;
 }
-
-nav {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
-}
-
 nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 1em;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.kegiatan-list {
   display: flex;
   justify-content: center;
-  gap: 1em;
-  padding: 2em;
+  list-style: none;
+  padding: 0;
+  background-color: #222;
 }
-
-.kegiatan-item {
-  background: #333;
+nav ul li a {
+  color: white;
   padding: 1em;
-  border-radius: 8px;
+  display: block;
+  text-decoration: none;
 }
-
+.kegiatan-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em;
+}
+.kegiatan-item {
+  background-color: #333;
+  padding: 1em;
+  border-radius: 10px;
+}
 footer {
   text-align: center;
-  padding: 2em;
-  background: #222;
-  margin-top: 2em;
+  padding: 1em;
+  background-color: #000;
 }

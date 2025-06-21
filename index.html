@@ -3,49 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taman Baca Anjelas</title>
+  <title data-i18n="title">Taman Baca Anjelas</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">TBA</div>
-    <h1><span class="gradient lang-id">Taman Baca Anjelas</span><span class="gradient lang-en" style="display:none;">Anjelas Reading Garden</span></h1>
-    <p><span class="lang-id">Belajar, Bermain, dan Tumbuh Bersama.</span><span class="lang-en" style="display:none;">Learn, Play, and Grow Together.</span></p>
+    <div class="logo" data-i18n="logo">TBA</div>
+    <h1><span class="gradient" data-i18n="main-title">Taman Baca Anjelas</span></h1>
+    <p data-i18n="tagline">Belajar, Bermain, dan Tumbuh Bersama.</p>
     <div class="lang-switch">
-      <button onclick="switchLang('id')">ID</button> |
-      <button onclick="switchLang('en')">EN</button>
+      <button onclick="setLanguage('id')">ID</button> |
+      <button onclick="setLanguage('en')">EN</button>
     </div>
   </header>
 
   <nav>
     <ul>
-      <li><a href="#">Beranda</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#kegiatan">Kegiatan</a></li>
-      <li><a href="#karya">Karya Anak</a></li>
-      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#" data-i18n="nav-home">Beranda</a></li>
+      <li><a href="#tentang" data-i18n="nav-about">Tentang Kami</a></li>
+      <li><a href="#kegiatan" data-i18n="nav-events">Kegiatan</a></li>
+      <li><a href="#karya" data-i18n="nav-work">Karya Anak</a></li>
+      <li><a href="#kontak" data-i18n="nav-contact">Kontak</a></li>
     </ul>
   </nav>
 
   <main>
     <section id="tentang">
-      <h2><span class="lang-id">Tentang Kami</span><span class="lang-en" style="display:none;">About Us</span></h2>
-      <p><span class="lang-id">Taman Baca Anjelas adalah ruang belajar komunitas.</span><span class="lang-en" style="display:none;">Anjelas Reading Garden is a community learning space.</span></p>
+      <h2 data-i18n="section-about">Tentang Kami</h2>
+      <p data-i18n="about-desc">Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
     </section>
+
     <section id="kegiatan">
-      <h2><span class="lang-id">Kegiatan</span><span class="lang-en" style="display:none;">Activities</span></h2>
+      <h2 data-i18n="section-events">Kegiatan Taman Baca Anjelas</h2>
       <div class="kegiatan-list">
-        <div class="kegiatan-item">📘 Belajar</div>
-        <div class="kegiatan-item">🎲 Bermain</div>
-        <div class="kegiatan-item">🤝 Aksi Sosial</div>
+        <div class="kegiatan-item" data-i18n="learn">📘 Belajar</div>
+        <div class="kegiatan-item" data-i18n="play">🎲 Bermain</div>
+        <div class="kegiatan-item" data-i18n="social">🤝 Aksi Sosial</div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Taman Baca Anjelas</p>
+    <p>© 2025 <span data-i18n="footer">Taman Baca Anjelas</span></p>
   </footer>
 
-  <script src="js/lang-switch.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
