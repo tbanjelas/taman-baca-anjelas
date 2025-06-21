@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Tentang Kami</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami - TBA</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h1>Tentang Taman Baca Anjelas</h1>
-    <p>Taman Baca Anjelas adalah ruang literasi untuk semua kalangan.</p>
+  <header>
+    <div class="topbar">
+      <div class="logo">TBA</div>
+      <div class="lang-switch" onclick="switchLang()">ID | EN</div>
+    </div>
+    <h1><span class="gradient">Tentang Taman Baca Anjelas</span></h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" data-id="nav-home">Beranda</a></li>
+      <li><a href="about.html" data-id="nav-about">Tentang Kami</a></li>
+      <li><a href="#galeri" data-id="nav-gallery">Galeri</a></li>
+      <li><a href="contact.html" data-id="nav-contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2 data-id="about-heading">Siapa Kami?</h2>
+      <p data-id="about-text">Kami adalah komunitas literasi yang berfokus pada pendidikan, kreativitas, dan inklusivitas anak-anak di lingkungan sekitar.</p>
+    </section>
+
+    <section>
+      <h2 data-id="founder-heading">Pendiri</h2>
+      <p data-id="founder-desc">TBA didirikan oleh Anjelas Rachmad — seorang pegiat pendidikan komunitas dengan semangat membaca dan menginspirasi anak-anak.</p>
+    </section>
+
+    <section>
+      <h2 data-id="support-heading">Sahabat TBA</h2>
+      <p data-id="support-desc">Kami mendapat dukungan dari relawan, orang tua, dan sahabat literasi yang membantu menghidupkan berbagai kegiatan.</p>
+    </section>
+
+    <section id="galeri">
+      <h2 data-id="gallery-heading">Galeri</h2>
+      <div class="galeri">
+        <img src="public/foto1.jpg" alt="Kegiatan Membaca" />
+        <img src="public/foto2.jpg" alt="Anak-anak Membuat Karya" />
+        <img src="public/foto3.jpg" alt="Diskusi Buku" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Taman Baca Anjelas</p>
+  </footer>
 </body>
 </html>
