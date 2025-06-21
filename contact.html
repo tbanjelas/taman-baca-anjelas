@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Kontak</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - TBA</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h1>Hubungi Kami</h1>
-    <form method="POST" netlify>
-        <input type="text" name="nama" placeholder="Nama" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <textarea name="pesan" placeholder="Pesan Anda" required></textarea><br>
-        <button type="submit">Kirim</button>
-    </form>
+  <header>
+    <div class="topbar">
+      <div class="logo">TBA</div>
+      <div class="lang-switch" onclick="switchLang()">ID | EN</div>
+    </div>
+    <h1><span class="gradient" data-id="contact-title">Hubungi Kami</span></h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" data-id="nav-home">Beranda</a></li>
+      <li><a href="about.html" data-id="nav-about">Tentang Kami</a></li>
+      <li><a href="contact.html" data-id="nav-contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="contact-section">
+      <form class="contact-form">
+        <label for="name" data-id="label-name">Nama</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email" data-id="label-email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message" data-id="label-message">Pesan</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" data-id="button-send">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Taman Baca Anjelas</p>
+  </footer>
 </body>
 </html>
