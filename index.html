@@ -1,44 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Taman Baca Anjelas</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+  <link rel="icon" href="public/logo.png" type="image/png" />
 </head>
-<body class="bg-black text-white">
-  <header class="navbar">
-    <div class="logo">TBA</div>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#">Home</a></li>
-      <li class="nav-item"><a href="#">About</a></li>
-      <li class="nav-item"><a href="#">Activities</a></li>
-      <li class="nav-item"><a href="#">Children's Works</a></li>
-      <li class="nav-item"><a href="#">Contact</a></li>
-      <li class="nav-item">
-        <button aria-label="Search" class="nav-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-      </li>
-      <li class="nav-item">
-        <a href="https://www.tiktok.com/@yourusername" target="_blank" aria-label="TikTok" class="nav-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M16 8.245c1.033.563 2.215.9 3.48.91v2.652a7.991 7.991 0 01-3.48-.801v4.273a5.727 5.727 0 11-5.727-5.727c.243 0 .482.017.716.05v2.678a3.04 3.04 0 00-.716-.087 3.045 3.045 0 103.045 3.045v-9.152h2.682z"/>
-          </svg>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">TBA</div>
+      <div class="lang-switch" onclick="switchLang()">ID | EN</div>
+    </div>
+    <h1><span class="gradient">Taman Baca Anjelas</span></h1>
+    <p class="subtext" data-id="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" data-id="nav-home">Beranda</a></li>
+      <li><a href="about.html" data-id="nav-about">Tentang Kami</a></li>
+      <li><a href="#kegiatan" data-id="nav-activities">Kegiatan</a></li>
+      <li><a href="#karya" data-id="nav-creations">Karya Anak</a></li>
+      <li><a href="contact.html" data-id="nav-contact">Kontak</a></li>
+      <li><input type="text" placeholder="Cari..." class="search-input" /></li>
+      <li>
+        <a href="mailto:info@tbanjelas.my.id" title="Email">
+          📧
         </a>
       </li>
-      <li class="nav-item">
-        <a href="mailto:youremail@example.com" aria-label="Email" class="nav-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <rect x="3" y="4" width="18" height="16" rx="2" ry="2"/>
-            <polyline points="3,4 12,13 21,4"/>
-          </svg>
+      <li>
+        <a href="https://www.tiktok.com/@tbanjelas" target="_blank" title="TikTok">
+          🎵
         </a>
       </li>
     </ul>
-  </header>
+  </nav>
+
+  <main>
+    <section id="tentang">
+      <h2 data-id="about-heading">Tentang Kami</h2>
+      <p data-id="about-desc">Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
+    </section>
+
+    <section id="kegiatan">
+      <h2 data-id="activities-heading">Kegiatan Taman Baca</h2>
+      <div class="kegiatan-list">
+        <div class="kegiatan-item" data-id="act-learn">📘 Belajar</div>
+        <div class="kegiatan-item" data-id="act-play">🎲 Bermain</div>
+        <div class="kegiatan-item" data-id="act-social">🤝 Aksi Sosial</div>
+      </div>
+    </section>
+
+    <section id="karya">
+      <h2 data-id="creations-heading">Karya Anak</h2>
+      <p data-id="creations-desc">Kumpulan karya tulis, gambar, dan kreativitas dari anak-anak peserta TBA.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Taman Baca Anjelas</p>
+  </footer>
 </body>
 </html>
