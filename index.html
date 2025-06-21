@@ -12,9 +12,9 @@
   <header>
     <div class="topbar">
       <div class="logo">TBA</div>
-      <div class="lang-switch" onclick="switchLang()">ID | EN</div>
+      <div class="lang-switch" data-id="lang-toggle" onclick="switchLang()">ID | EN</div>
     </div>
-    <h1><span class="gradient">Taman Baca Anjelas</span></h1>
+    <h1><span class="gradient" data-id="site-title">Taman Baca Anjelas</span></h1>
     <p class="subtext" data-id="subtitle">Belajar, Bermain, dan Tumbuh Bersama.</p>
   </header>
 
@@ -26,19 +26,17 @@
       <li><a href="#karya" data-id="nav-creations">Karya Anak</a></li>
       <li><a href="contact.html" data-id="nav-contact">Kontak</a></li>
       <li><input type="text" placeholder="Cari..." class="search-input" /></li>
-      <li>
-        <a href="mailto:info@tbanjelas.my.id" title="Email">📧</a>
-      </li>
-      <li>
-        <a href="https://www.tiktok.com/@tbanjelas" target="_blank" title="TikTok">🎵</a>
-      </li>
+      <li><a href="mailto:info@tbanjelas.my.id" title="Email">📧</a></li>
+      <li><a href="https://www.tiktok.com/@tbanjelas" target="_blank" title="TikTok">🎵</a></li>
     </ul>
   </nav>
 
   <main>
     <section id="tentang">
       <h2 data-id="about-heading">Tentang Kami</h2>
-      <p data-id="about-desc">Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.</p>
+      <p data-id="about-desc">
+        Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.
+      </p>
     </section>
 
     <section id="kegiatan">
