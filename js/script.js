@@ -1,37 +1,46 @@
-// Script JavaScript untuk bahasa
-document.addEventListener("DOMContentLoaded", function () {
-  const switcher = document.querySelector(".lang-switch");
-  const texts = {
-    id: {
-      heading: "Taman Baca Anjelas",
-      desc: "Belajar, Bermain, dan Tumbuh Bersama.",
-      tentang: "Tentang Kami",
-      kegiatan: "Kegiatan Taman Baca Anjelas",
-      belajar: "📘 Belajar",
-      bermain: "🎲 Bermain",
-      sosial: "🤝 Aksi Sosial"
-    },
-    en: {
-      heading: "Anjelas Reading Garden",
-      desc: "Learn, Play, and Grow Together.",
-      tentang: "About Us",
-      kegiatan: "Activities at Anjelas",
-      belajar: "📘 Learning",
-      bermain: "🎲 Playing",
-      sosial: "🤝 Social Actions"
+const langData = {
+  en: {
+    'subtitle': 'Learn, Play, and Grow Together.',
+    'nav-home': 'Home',
+    'nav-about': 'About Us',
+    'nav-activities': 'Activities',
+    'nav-creations': "Children's Work",
+    'nav-contact': 'Contact',
+    'about-heading': 'About Us',
+    'about-desc': 'Taman Baca Anjelas is a learning space for all ages who want to grow through books, discussions, and educational games.',
+    'activities-heading': 'TBA Activities',
+    'act-learn': '📘 Learning',
+    'act-play': '🎲 Playing',
+    'act-social': '🤝 Social Actions',
+    'creations-heading': "Children's Work",
+    'creations-desc': 'A collection of writings, drawings, and creativity from TBA participants.'
+  },
+  id: {
+    'subtitle': 'Belajar, Bermain, dan Tumbuh Bersama.',
+    'nav-home': 'Beranda',
+    'nav-about': 'Tentang Kami',
+    'nav-activities': 'Kegiatan',
+    'nav-creations': 'Karya Anak',
+    'nav-contact': 'Kontak',
+    'about-heading': 'Tentang Kami',
+    'about-desc': 'Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.',
+    'activities-heading': 'Kegiatan Taman Baca',
+    'act-learn': '📘 Belajar',
+    'act-play': '🎲 Bermain',
+    'act-social': '🤝 Aksi Sosial',
+    'creations-heading': 'Karya Anak',
+    'creations-desc': 'Kumpulan karya tulis, gambar, dan kreativitas dari anak-anak peserta TBA.'
+  }
+};
+
+let currentLang = 'id';
+
+function switchLang() {
+  currentLang = currentLang === 'id' ? 'en' : 'id';
+  document.querySelectorAll('[data-id]').forEach(el => {
+    const key = el.getAttribute('data-id');
+    if (langData[currentLang][key]) {
+      el.textContent = langData[currentLang][key];
     }
-  };
-
-  let currentLang = "id";
-
-  switcher.addEventListener("click", () => {
-    currentLang = currentLang === "id" ? "en" : "id";
-    document.querySelector("h1 span").textContent = texts[currentLang].heading;
-    document.querySelector("header p").textContent = texts[currentLang].desc;
-    document.querySelector("#tentang h2").textContent = texts[currentLang].tentang;
-    document.querySelector("#kegiatan h2").textContent = texts[currentLang].kegiatan;
-    document.querySelectorAll(".kegiatan-item")[0].textContent = texts[currentLang].belajar;
-    document.querySelectorAll(".kegiatan-item")[1].textContent = texts[currentLang].bermain;
-    document.querySelectorAll(".kegiatan-item")[2].textContent = texts[currentLang].sosial;
   });
-});
+}
