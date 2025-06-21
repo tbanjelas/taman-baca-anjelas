@@ -1,6 +1,6 @@
 const langData = {
   en: {
-    'subtitle': 'Learn, Play, and Grow Together.',
+    subtitle: 'Learn, Play, and Grow Together.',
     'nav-home': 'Home',
     'nav-about': 'About Us',
     'nav-activities': 'Activities',
@@ -16,14 +16,14 @@ const langData = {
     'creations-desc': 'A collection of writings, drawings, and creativity from TBA participants.'
   },
   id: {
-    'subtitle': 'Belajar, Bermain, dan Tumbuh Bersama.',
+    subtitle: 'Belajar, Bermain, dan Tumbuh Bersama.',
     'nav-home': 'Beranda',
     'nav-about': 'Tentang Kami',
     'nav-activities': 'Kegiatan',
     'nav-creations': 'Karya Anak',
     'nav-contact': 'Kontak',
     'about-heading': 'Tentang Kami',
-    'about-desc': 'Taman Baca Anjelas adalah ruang belajar untuk semua usia yang ingin tumbuh bersama lewat buku, diskusi, dan permainan edukatif.',
+    'about-desc': 'Taman Baca Anjelas adalah ruang belajar...',
     'activities-heading': 'Kegiatan Taman Baca',
     'act-learn': '📘 Belajar',
     'act-play': '🎲 Bermain',
